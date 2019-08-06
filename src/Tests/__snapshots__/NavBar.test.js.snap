@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar component renders to the DOM 1`] = `
+<div
+  data-testid="nav"
+>
+  <nav
+    class="navbar navbar-expand-lg navbar-dark bg-dark"
+  >
+    <a
+      class="navbar-brand text-white"
+    >
+      New SLIM
+    </a>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+    >
+      <ul
+        class="navbar-nav mr-auto"
+      >
+        <li
+          class="nav-item active"
+        >
+          <a
+            class="nav-link"
+            href="#"
+          >
+            Home 
+            <span
+              class="sr-only"
+            >
+              (current)
+            </span>
+          </a>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
+            class="nav-link"
+            href="#"
+          >
+            Link
+          </a>
+        </li>
+        <li
+          class="nav-item dropdown"
+        >
+          <a
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+          >
+            Dropdown
+          </a>
+          <div
+            aria-labelledby="navbarDropdown"
+            class="dropdown-menu"
+          >
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              Action
+            </a>
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              Another action
+            </a>
+            <div
+              class="dropdown-divider"
+            />
+            <a
+              class="dropdown-item"
+              href="#"
+            >
+              Something else here
+            </a>
+          </div>
+        </li>
+        <li
+          class="nav-item"
+        >
+          <a
+            class="nav-link disabled"
+            href="#"
+          >
+            Disabled
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
