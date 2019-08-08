@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavColumn component renders to the DOM 1`] = `
+<div
+  class="card text-center ml-2 mt-5"
+  data-testid="navcol"
+  id="navMenu"
+  style="width: 20rem;"
+>
+  <div
+    class="card-body navbar-dark bg-dark pt-0"
+  >
+    <div>
+      <ul
+        class="list-group list-group-flush"
+      >
+        <h3
+          class="navbar-dark bg-dark text-white list-group-item"
+        >
+          Claims
+        </h3>
+        <li
+          class="list-group-item"
+        >
+          New Claim
+        </li>
+        <li
+          class="list-group-item"
+        >
+          Diary Reviews
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
