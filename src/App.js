@@ -1,10 +1,13 @@
 import React from 'react';
-import TopBar from './Components/Core/TopBar';
+import Dashboard from './Components/Meta/Dashboard'
+import TopBar from './/Components/Core/TopBar'
 
 function App() {
-    return ( <div className = "App">
-        <TopBar />
-        </div>
+    return ( 
+    <div className = "App">
+        <TopBar user="Alex"/>
+        <Dashboard />
+    </div>
     );
 }
 

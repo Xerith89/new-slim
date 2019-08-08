@@ -1,0 +1,23 @@
+
+a {
+    text-decoration: none !important;
+    color: #000000;
+}
+a:hover {
+    color: #000000;
+}
+.btn {
+    outline: none;
+    background-image: -webkit-linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2) 40%, rgba(0, 0, 0, 0.15) 60%, rgba(0, 0, 0, 0.05));
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2) 40%, rgba(0, 0, 0, 0.15) 60%, rgba(0, 0, 0, 0.05));
+    background-repeat: repeat-x;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.dropdown-item:hover {
+    background-color: #ebdede;
+   
+}
