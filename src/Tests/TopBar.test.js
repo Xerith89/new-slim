@@ -1,17 +1,17 @@
 import React from 'react';
-import NavBar from '../Components/Core/NavBar';
+import TopBar from '../Components/Core/TopBar';
 import {render, cleanup, fireEvent} from '@testing-library/react';
 
 
 afterEach(cleanup)
 
-test('NavBar component renders to the DOM', () => {
-    const {getByTestId} = render(<NavBar />);
-    expect(getByTestId('nav')).toMatchSnapshot();
+test('TopBar component renders to the DOM', () => {
+    const {getByTestId} = render(<TopBar />);
+    expect(getByTestId('topbar')).toMatchSnapshot();
 });
 
 test('Cog toggles dropdown menu', () => {
-    const {queryByText, getByTestId} = render(<NavBar />)
+    const {queryByText, getByTestId} = render(<TopBar />)
     expect(queryByText('Logout')).toBeFalsy();
     expect(queryByText('Settings')).toBeFalsy();
     fireEvent.click(getByTestId('toggler'));

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCog } from '@fortawesome/free-solid-svg-icons'
 import DropDown from './DropDown'
 
-export default class NavBar extends Component {
+export default class TopBar extends Component {
     
     constructor(props) {
         super(props)
@@ -30,7 +30,7 @@ export default class NavBar extends Component {
         }
 
         return (
-           <div data-testid="nav">
+           <div data-testid="topbar">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <h1 className="navbar-brand text-white" >New SLIM</h1>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -38,7 +38,7 @@ export default class NavBar extends Component {
                         <li className="nav-item nav-link active">
                             <h3>Welcome, Username</h3>
                         </li>
-                        <div className="dropdown">
+                        <div className="dropdown pr-5">
                             <li className="nav-item">
                                 <button className="nav-link bg-transparent border-0" data-testid="toggler" onClick={this.toggleDropDown} ><FontAwesomeIcon icon={faCog} size="2x" /></button>
                             </li>

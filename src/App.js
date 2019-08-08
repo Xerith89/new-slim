@@ -1,9 +1,9 @@
 import React from 'react';
-import NavBar from './Components/Core/NavBar';
+import TopBar from './Components/Core/TopBar';
 
 function App() {
     return ( <div className = "App">
-        <NavBar />
+        <TopBar />
         </div>
     );
 }

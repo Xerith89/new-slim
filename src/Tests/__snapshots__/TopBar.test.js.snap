@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavBar component renders to the DOM 1`] = `
+exports[`TopBar component renders to the DOM 1`] = `
 <div
-  data-testid="nav"
+  data-testid="topbar"
 >
   <nav
     class="navbar navbar-expand-lg navbar-dark bg-dark"
@@ -27,7 +27,7 @@ exports[`NavBar component renders to the DOM 1`] = `
           </h3>
         </li>
         <div
-          class="dropdown"
+          class="dropdown pr-5"
         >
           <li
             class="nav-item"
