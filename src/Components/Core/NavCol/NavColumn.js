@@ -46,7 +46,7 @@ export default class NavColumn extends Component {
     }
         return (
             <div>
-                <div id="navMenu" data-testid="navcol" className="card text-center ml-2 mt-5 mb-5" style={{ width: '18rem'}}>
+                <div id="navMenu" data-testid="navcol" className="card text-center ml-2 mt-5 mb-5 mr-5" style={{ width: '18rem'}}>
                     <div className="card-body p-0">
                         <NavItem title="Claims" links={claimsLinks.links} />
                         <NavItem title="Underwriting" links={underwritingLinks.links} />
