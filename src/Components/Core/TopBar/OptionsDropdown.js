@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../../public/css/dropdown.css'
+import './dropdown.css';
 import { faCog } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
