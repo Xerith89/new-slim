@@ -18,9 +18,9 @@ test('Update function is called when text entered into searchbox', () => {
     //expect(spy).toHaveBeenCalledTimes(1);
 });
 
-test('Search function runs on click of search button', () => {
-    const spy = jest.fn();
-    const {getByTestId} = render(<SearchDropdown handleSearch={spy}/>);
+test('Clicking search brings up results modal', () => {
+    const {getByTestId, queryByTestId} = render(<SearchDropdown />);
+    expect(queryByTestId('searchResults')).toBeFalsy();
     fireEvent.click(getByTestId('searchButton'));
-    //expect(spy).toHaveBeenCalledTimes(1);
+    expect(queryByTestId('searchResults')).toBeTruthy();
 });

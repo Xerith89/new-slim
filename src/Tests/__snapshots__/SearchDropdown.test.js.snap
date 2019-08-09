@@ -60,13 +60,19 @@ exports[`Search dropdown component renders to the DOM 1`] = `
           value=""
         />
       </div>
-      <button
-        class="btn btn-block btn-primary"
-        data-testid="searchButton"
-      >
-        Search
-      </button>
+      <div>
+        <button
+          class="btn-block btn btn-dark"
+          data-testid="searchButton"
+          type="button"
+        >
+          Search
+        </button>
+      </div>
     </form>
+    <div
+      class="panel panel-default"
+    />
     <button
       class="bg-transparent border-0 link"
     >
