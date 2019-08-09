@@ -1,6 +1,6 @@
 import React from 'react';
 import Dashboard from './Components/Meta/Dashboard'
-import TopBar from './/Components/Core/TopBar'
+import TopBar from './Components/Core/TopBar/TopBar'
 
 function App() {
     return ( 

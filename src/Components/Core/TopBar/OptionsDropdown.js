@@ -1,7 +1,8 @@
 import React from 'react'
-import '../../Assets/dropdown.css'
+import '../../../../public/css/dropdown.css'
 import { faCog } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types'
 
 export default function OptionsDropdown(props) {
     return (
@@ -18,3 +19,7 @@ export default function OptionsDropdown(props) {
         </div>
     )
 }
+
+OptionsDropdown.propTypes = {
+    links: PropTypes.array
+};

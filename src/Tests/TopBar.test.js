@@ -1,5 +1,5 @@
 import React from 'react';
-import TopBar from '../Components/Core/TopBar';
+import TopBar from '../Components/Core/TopBar/TopBar';
 import {render, cleanup, fireEvent} from '@testing-library/react';
 
 

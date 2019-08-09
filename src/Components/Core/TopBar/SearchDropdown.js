@@ -11,6 +11,7 @@ export default class SearchDropdown extends Component {
             type: 'Spec',
             number: ''
         }
+
     }
 
     handleChange = (event) => {
