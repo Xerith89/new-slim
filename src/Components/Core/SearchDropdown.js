@@ -8,12 +8,12 @@ export default class SearchDropdown extends Component {
         super(props)
 
         this.state = {
-            type: '',
+            type: 'Spec',
             number: ''
         }
     }
 
-    onChange = (event) => {
+    handleChange = (event) => {
         let name = event.target.name;
         let target = event.target.value;
         this.setState({
@@ -32,15 +32,15 @@ export default class SearchDropdown extends Component {
                 <div className="list-group dropdown-menu dropdown-menu-right mr-5 text-center">
                     <h5><FontAwesomeIcon icon={faSearch}/> Quick Search</h5>
                     <form className="m-2">
-                        <div className="form-group" onChange={this.onChange}>
-                            <input type="radio" value="spec" name="type" defaultChecked /> Specification 
-                            <input type="radio" value="claim" name="type" className="ml-2"/> Claim
+                        <div className="form-group" onChange={this.handleChange}>
+                            <input type="radio" value="Spec" name="type" defaultChecked /> Specification 
+                            <input type="radio" value="Claim" name="type" className="ml-2"/> Claim
                         </div>
                         <div className="form-group">
                             <label>Search Number</label>
-                            <input type="text" onChange={this.onChange} name="number" className="form-control"/>
+                            <input type="text" data-testid="searchText" onChange={this.handleChange} value={this.state.number} name="number" className="form-control"/>
                         </div>
-                        <button className="btn btn-block btn-primary" onClick={this.handleSearch} >Search</button>
+                        <button className="btn btn-block btn-primary" onClick={this.handleSearch} data-testid="searchButton">Search</button>
                     </form>
                     <button className="bg-transparent border-0 link">Advanced Search</button>
                 </div>
