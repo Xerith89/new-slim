@@ -15,7 +15,7 @@ test('Update function is called when text entered into searchbox', () => {
     expect(getByTestId('searchText').value).toBe("");
     fireEvent.change(getByTestId('searchText'), { target: { value: "23" } });
     expect(getByTestId('searchText').value).toBe("23");
-    //expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledTimes(1);
 });
 
 test('Clicking search brings up results modal', () => {

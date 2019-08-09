@@ -11,7 +11,6 @@ export default class SearchDropdown extends Component {
         this.state = {
             type: 'Spec',
             number: '',
-            showModal: false
         }
 
     }
