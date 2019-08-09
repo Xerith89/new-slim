@@ -38,8 +38,15 @@ export default class TopBar extends Component {
         let menu;
         let search;
 
+        const optionsLinks = {
+            links: [
+                "Settings",
+                "Logout"
+            ]
+        }
+
         if (optionsIsOpen) {
-            menu = <OptionsDropdown/>
+            menu = <OptionsDropdown links={optionsLinks.links} />
         }
 
         if (searchIsOpen) {
