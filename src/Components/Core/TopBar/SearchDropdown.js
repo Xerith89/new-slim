@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SearchResults from './SearchResults';
 
 export default class SearchDropdown extends Component {
 
@@ -10,6 +11,7 @@ export default class SearchDropdown extends Component {
         this.state = {
             type: 'Spec',
             number: '',
+            showModal: false
         }
 
     }
@@ -43,7 +45,7 @@ export default class SearchDropdown extends Component {
                             <label>Search Number</label>
                             <input type="text" data-testid="searchText" onChange={this.handleChange} value={this.state.number} name="number" className="form-control"/>
                         </div>
-                        <button className="btn btn-block btn-primary" onClick={this.handleSearch} data-testid="searchButton">Search</button>
+                        <SearchResults />
                     </form>
                     <div className="panel panel-default">
                     </div>
