@@ -6,17 +6,47 @@ export default class MessageReview extends Component {
 
         return (
             <div >
-                <div className="mt-5 ml-5">
-                    <div id="overview" className="card" style={{width: '70rem'}}>
-                        <h5 className="card-header text-center main-color-bg">Messages</h5>
-                        <div className="card-body">
-                            <div className="card">
-                                <div className="form-group">
-                                <select className="form-control-sm">
-                                    <option>My Messages</option>
-                                    <option>Team Messages</option>
-                                </select>
-                                </div>
+                <div className="mt-5">
+                    <div id="overview" className="card" style={{width: 'auto'}}>
+                        <h5 className="card-header text-center bg-info text-white">Messages <span class="badge badge-dark">3</span></h5>
+                        <div className="card-body bg-light">
+                            <div className="form-group">
+                            <select className="form-control-sm">
+                                <option>My Messages</option>
+                                <option>Team Messages</option>
+                            </select>
+                            </div>
+                            <div className="m-3">
+                                <table className="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Subject</th>
+                                        <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <td>Mark Otto</td>
+                                        <td>12-04-19</td>
+                                        <td>Callback</td>
+                                        <td></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Jacob Thornton</td>
+                                        <td>14-04-19</td>
+                                        <td>New Claim</td>
+                                        <td></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Larry</td>
+                                        <td>Bird</td>
+                                        <td>18-04-19</td>
+                                        <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div> 
