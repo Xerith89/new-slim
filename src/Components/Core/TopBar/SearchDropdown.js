@@ -9,7 +9,7 @@ export default class SearchDropdown extends Component {
 
         this.state = {
             type: 'Spec',
-            number: ''
+            number: '',
         }
 
     }
@@ -18,13 +18,15 @@ export default class SearchDropdown extends Component {
         let name = event.target.name;
         let target = event.target.value;
         this.setState({
-            [name]: target
-        });
+            [name]: target}
+        );
     }
 
     handleSearch = (event) => {
         event.preventDefault();
-        console.log("Make request to API");
+        if (this.state.number !== "") {
+            console.log("Make request to API");
+        }
     }
 
     render() {
@@ -43,6 +45,8 @@ export default class SearchDropdown extends Component {
                         </div>
                         <button className="btn btn-block btn-primary" onClick={this.handleSearch} data-testid="searchButton">Search</button>
                     </form>
+                    <div className="panel panel-default">
+                    </div>
                     <button className="bg-transparent border-0 link">Advanced Search</button>
                 </div>
             </div>
