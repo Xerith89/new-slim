@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component renders to the DOM 1`] = `
+<footer
+  data-testid="footer"
+>
+  <nav
+    class="navbar ml-auto navbar-dark bg-dark "
+  >
+    <span>
+      <img
+        alt="footerlogo"
+        src="footer_logo.png"
+      />
+    </span>
+    <span>
+      <div>
+        <small
+          class="ml-5"
+        >
+          Registered office: 145 New Dover Road, Capel-Le-Ferne, Folkestone CT18 7JR
+        </small>
+         
+        <br />
+        <small
+          class="ml-5"
+        >
+          Stephen Lower Insurance Services Limited is authorised and regulated by the Financial Conduct Authority, Financial Services Register number 628613 Registered in England and Wales No.4930449.
+        </small>
+        <br />
+      </div>
+    </span>
+  </nav>
+</footer>
+`;
