@@ -8,8 +8,8 @@ export default class DiaryReviews extends Component {
             <div >
                 <div className="mt-5">
                     <div id="overview" className="card" style={{width: 'auto'}}>
-                        <h5 className="card-header text-center bg-info text-white">Diary Reviews</h5>
-                        <div className="card-body bg-light">
+                        <h5 className="card-header  text-center" style={{backgroundColor: "#ebf2fc"}}>Diary Reviews</h5>
+                        <div className="card-body bg-white">
                             <div className="form-group">
                                 <select className="form-control-sm">
                                     <option>My Diary</option>

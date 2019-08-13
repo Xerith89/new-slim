@@ -8,8 +8,8 @@ export default class MessageReview extends Component {
             <div >
                 <div className="mt-5">
                     <div id="overview" className="card" style={{width: 'auto'}}>
-                        <h5 className="card-header text-center bg-info text-white">Messages <span class="badge badge-dark">3</span></h5>
-                        <div className="card-body bg-light">
+                        <h5 className="card-header text-center" style={{backgroundColor: "#ebf2fc"}}>Messages <span class="badge badge-dark">3</span></h5>
+                        <div className="card-body">
                             <div className="form-group">
                             <select className="form-control-sm">
                                 <option>My Messages</option>
