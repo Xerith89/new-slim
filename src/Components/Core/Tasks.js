@@ -2,9 +2,29 @@ import React, { Component } from 'react'
 import FilterBar from './FilterBar'
 import TableDisplayData from './TableDisplayData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBook } from '@fortawesome/free-solid-svg-icons'
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
 
 export default class Tasks extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            taskList: []
+        }
+    }
+
+    componentDidMount() {
+        fetch('http://jsonplaceholder.typicode.com/todos?_limit=10')
+        .then(response => response.json())
+        .then (json => {
+            this.setState({
+                taskList: json
+            });
+        })
+        .catch(error => console.log(error)
+        );
+    }
 
     render() {
 
@@ -45,17 +65,17 @@ export default class Tasks extends Component {
         ]
 
         const tableOptions = [
-            'Task Name', 'Raised On', 'Assigned To', 'Priority', 'Due Date'
+            'Task Name', 'Raised On', 'Type', 'Assigned To', 'Priority', 'Due Date'
         ]
 
         return (
             <div >
                 <div className="mt-5">
                     <div id="overview" className="card" style={{width: 'auto'}}>
-                        <h2 className="card-header  text-center" style={{backgroundColor: "#ebf2fc"}}><FontAwesomeIcon icon={faBook}/> Tasks <span className="badge">0</span></h2>
+                        <h2 className="card-header  text-center" style={{backgroundColor: "#ebf2fc"}}><FontAwesomeIcon icon={faEdit}/> Tasks</h2>
                         <div className="card-body bg-white">
                             <FilterBar options={filterOptions}/>
-                            <TableDisplayData options={tableOptions}/>
+                            <TableDisplayData tasks={this.state.taskList} options={tableOptions}/>
                         </div>
                     </div> 
                 </div>

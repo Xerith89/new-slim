@@ -7,33 +7,28 @@ export default class TableDisplayData extends Component {
         return (
             <div>
                 <div className="m-3">
-                    <table className="table table-striped table-hover table-bordered">
+                    <table className="table table-hover table-bordered">
                         <thead>
                             <tr>
                                 {this.props.options.map((option,i) => {
-                                    return (<th scope="col">{option} <button style={{border: '0', padding: '0', background: 'none'}} data-toggle="tooltip" data-placement="top" title="Sort"><FontAwesomeIcon icon={faSort}/></button></th>)
+                                    return (<th scope="col" key={i}>{option} <button style={{border: '0', padding: '0', background: 'none'}} data-toggle="tooltip" data-placement="top" title="Sort"><FontAwesomeIcon icon={faSort}/></button></th>)
                                 })}
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Mark Otto</td>
-                                <td>12-04-19</td>
-                                <td>Callback</td>
-                                <td></td>
+                            {this.props.tasks.map((task) => {
+                                return (
+                                   
+                                <tr key={task.id}>
+                                    <td><a href="/" style={{display: 'block'}}>{task.title}</a></td>
+                                    <td><a href="/" style={{display: 'block'}}>5500061</a></td>
+                                    <td><a href="/" style={{display: 'block'}}>Claim</a></td>
+                                    <td><a href="/" style={{display: 'block'}}>Alex Coupe</a></td>
+                                    <td><a href="/" style={{display: 'block'}}>{task.userId ? 'High' : 'Normal'}</a></td>
+                                    <td><a href="/" style={{display: 'block'}}>21st Aug 2019</a></td>
                                 </tr>
-                                <tr>
-                                <td>Jacob Thornton</td>
-                                <td>14-04-19</td>
-                                <td>New Claim</td>
-                                <td></td>
-                                </tr>
-                                <tr>
-                                <td>Larry</td>
-                                <td>Bird</td>
-                                <td>18-04-19</td>
-                                <td></td>
-                            </tr>
+                                )
+                            })}
                         </tbody>
                     </table>
                 </div>
