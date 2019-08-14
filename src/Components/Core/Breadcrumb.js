@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default function Breadcrumb(props) {
     return (
@@ -10,4 +11,8 @@ export default function Breadcrumb(props) {
             </nav>
         </div>
     )
+}
+
+Breadcrumb.propTypes = {
+    title: PropTypes.string
 }

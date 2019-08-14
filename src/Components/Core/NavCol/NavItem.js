@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default function NavItem(props) {
     return (
@@ -13,3 +14,6 @@ export default function NavItem(props) {
         </div>)
 }
 
+NavItem.propTypes = {
+    links: PropTypes.array
+};

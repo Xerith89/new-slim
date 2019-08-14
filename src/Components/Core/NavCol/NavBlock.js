@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {SlideDown} from 'react-slidedown'
 import 'react-slidedown/lib/slidedown.css'
 import NavItem from './NavItem';
+import PropTypes from 'prop-types'
 
 export default class NavBlock extends Component {
 
@@ -28,3 +29,8 @@ export default class NavBlock extends Component {
         )
     }
 }
+
+NavBlock.propTypes = {
+    title: PropTypes.string,
+    links: PropTypes.array
+};
