@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner component renders to the DOM 1`] = `
+<div
+  class="d-flex justify-content-center m-5"
+  data-testid="spinner"
+>
+  <div
+    class="spinner-border"
+    role="status"
+  >
+    <span
+      class="sr-only"
+    >
+      Loading...
+    </span>
+  </div>
+</div>
+`;
