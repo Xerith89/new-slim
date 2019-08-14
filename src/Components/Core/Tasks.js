@@ -3,6 +3,8 @@ import FilterBar from './FilterBar'
 import TableDisplayData from './TableDisplayData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
+import Pagination from './Pagination'
+import Spinner from './Spinner'
 
 export default class Tasks extends Component {
 
@@ -10,7 +12,8 @@ export default class Tasks extends Component {
         super(props)
 
         this.state = {
-            taskList: []
+            taskList: [],
+            fetchingTasks: true
         }
     }
 
@@ -24,6 +27,9 @@ export default class Tasks extends Component {
         })
         .catch(error => console.log(error)
         );
+        this.setState({
+            fetchingTasks: false
+        });
     }
 
     render() {
@@ -75,7 +81,8 @@ export default class Tasks extends Component {
                         <h2 className="card-header  text-center" style={{backgroundColor: "#ebf2fc"}}><FontAwesomeIcon icon={faEdit}/> Tasks</h2>
                         <div className="card-body bg-white">
                             <FilterBar options={filterOptions}/>
-                            <TableDisplayData tasks={this.state.taskList} options={tableOptions}/>
+                            {this.state.fetchingTasks ? <Spinner /> : <TableDisplayData tasks={this.state.taskList} options={tableOptions}/>}
+                            <Pagination totalRecords={50}/>
                         </div>
                     </div> 
                 </div>
