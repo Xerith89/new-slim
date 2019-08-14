@@ -16,7 +16,7 @@ export default class FilterBar extends Component {
                  <div className="form-group m-2">
                  {this.props.options.map((element, i) => { 
                      return (<React.Fragment key={i}>
-                                    <label className="mr-1 ml-2">{element.header}:</label>
+                                    <label className="mr-1 ml-4 mt-3 mb-2">{element.header}:</label>
                                     <select className="form-control-sm col-md-2">
                                     {element.body.map((option, j) => { 
                                     return( <option key={j}>{option}</option>)
