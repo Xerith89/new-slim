@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import NavItem from './NavItem'
+import NavBlock from './NavBlock'
 
 // This component renders on the left of the screen and provides navigation links for the app
 
@@ -48,10 +48,10 @@ export default class NavColumn extends Component {
             <div>
                 <div id="navMenu" data-testid="navcol" className="card text-center ml-2 mt-2 mb-5 mr-5" style={{ width: '18rem'}}>
                     <div className="card-body p-0">
-                        <NavItem title="Claims" links={claimsLinks.links} />
-                        <NavItem title="Underwriting" links={underwritingLinks.links} />
-                        <NavItem title="Accounts" links={accountsLinks.links} />
-                        <NavItem title="Agency" links={agencyLinks.links} />
+                        <NavBlock title="Claims" links={claimsLinks.links} />
+                        <NavBlock title="Underwriting" links={underwritingLinks.links} />
+                        <NavBlock title="Accounts" links={accountsLinks.links} />
+                        <NavBlock title="Agency" links={agencyLinks.links} />
                     </div>
                 </div>
             </div>
