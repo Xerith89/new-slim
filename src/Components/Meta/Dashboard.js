@@ -13,7 +13,7 @@ export default class Dashboard extends Component {
                     <div className="col-md-3">
                         <NavColumn />
                     </div>
-                    <div className="col-md-9">
+                    <div className="col-md-8">
                         <DiaryReviews />
                         <MessageReview />
                     </div>
