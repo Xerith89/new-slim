@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSort} from '@fortawesome/free-solid-svg-icons'
 import {tableOptions} from '../Util/TasksConfig'
 import DisplayTasks from './DisplayTasks'
+import {sortType} from '../Util/Enums'
 
 export default class TableHeader extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ export default class TableHeader extends Component {
         this.state = {
             tasks : this.props.taskList,
             sortedTasks: [],
-            sortTaskNameAscending: true,
+            sortTaskNameAscending: sortType.DEFAULT,
             sortNumberAscending: true,
             sortTypeAscending: true,
             sortAssignedToAscending: true,
@@ -23,38 +24,50 @@ export default class TableHeader extends Component {
     handleClick = (event) => {
         const sorted = [...this.state.tasks];
 
-        if (this.state.sortTaskNameAscending) {
-            sorted.sort((a,b) => {
-                const genreA = a.taskName.toUpperCase();
-                const genreB = b.taskName.toUpperCase();
-            
-                let comparison = 0;
-                if (genreA < genreB) {
-                comparison = 1;
-                } else if (genreA > genreB) {
-                comparison = -1;
-                }
-                return comparison;
-            });
-        } else {
-            sorted.sort((a,b) => {
-                const genreA = a.taskName.toUpperCase();
-                const genreB = b.taskName.toUpperCase();
-            
-                let comparison = 0;
-                if (genreA > genreB) {
-                comparison = 1;
-                } else if (genreA < genreB) {
-                comparison = -1;
-                }
-                return comparison;
-            });
+        switch (this.state.sortTaskNameAscending) {
+            case sortType.DEFAULT:
+                this.setState({
+                    sortedTasks: this.props.taskList,
+                    sortTaskNameAscending: sortType.ASCENDING
+                });
+                break;
+            case sortType.ASCENDING:
+                sorted.sort((a,b) => {
+                    const genreA = a.taskName.toUpperCase();
+                    const genreB = b.taskName.toUpperCase();
+                
+                    let comparison = 0;
+                    if (genreA < genreB) {
+                    comparison = 1;
+                    } else if (genreA > genreB) {
+                    comparison = -1;
+                    }
+                    return comparison;
+                });
+                this.setState({
+                    sortedTasks: sorted,
+                    sortTaskNameAscending: sortType.DESECENDING
+                });
+                break;
+            case sortType.DESECENDING:
+                sorted.sort((a,b) => {
+                    const genreA = a.taskName.toUpperCase();
+                    const genreB = b.taskName.toUpperCase();
+                
+                    let comparison = 0;
+                    if (genreA > genreB) {
+                    comparison = 1;
+                    } else if (genreA < genreB) {
+                    comparison = -1;
+                    }
+                    return comparison;
+                });
+                this.setState({
+                    sortedTasks: sorted,
+                    sortTaskNameAscending: sortType.DEFAULT
+                });
+                break;
         }
-        this.setState({
-            sortedTasks: sorted,
-            sortTaskNameAscending: !this.state.sortTaskNameAscending
-        })
-        console.log(sorted);
     }
 
     render() {
