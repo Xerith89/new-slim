@@ -10,26 +10,49 @@ export default class TableHeader extends Component {
 
         this.state = {
             tasks : this.props.taskList,
-            sortedTasks: []
+            sortedTasks: [],
+            sortTaskNameAscending: true,
+            sortNumberAscending: true,
+            sortTypeAscending: true,
+            sortAssignedToAscending: true,
+            sortPriorityAscending: true,
+            sortDueDateAscending: true
         }
     }
 
     handleClick = (event) => {
         const sorted = [...this.state.tasks];
-        sorted.sort((a,b) => {
-            const genreA = a.taskName.toUpperCase();
-            const genreB = b.taskName.toUpperCase();
-          
-            let comparison = 0;
-            if (genreA < genreB) {
-              comparison = 1;
-            } else if (genreA > genreB) {
-              comparison = -1;
-            }
-            return comparison;
-        });
+
+        if (this.state.sortTaskNameAscending) {
+            sorted.sort((a,b) => {
+                const genreA = a.taskName.toUpperCase();
+                const genreB = b.taskName.toUpperCase();
+            
+                let comparison = 0;
+                if (genreA < genreB) {
+                comparison = 1;
+                } else if (genreA > genreB) {
+                comparison = -1;
+                }
+                return comparison;
+            });
+        } else {
+            sorted.sort((a,b) => {
+                const genreA = a.taskName.toUpperCase();
+                const genreB = b.taskName.toUpperCase();
+            
+                let comparison = 0;
+                if (genreA > genreB) {
+                comparison = 1;
+                } else if (genreA < genreB) {
+                comparison = -1;
+                }
+                return comparison;
+            });
+        }
         this.setState({
-            sortedTasks: sorted
+            sortedTasks: sorted,
+            sortTaskNameAscending: !this.state.sortTaskNameAscending
         })
         console.log(sorted);
     }
