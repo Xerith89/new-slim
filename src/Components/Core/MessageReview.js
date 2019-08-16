@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import FilterBar from './FilterBar'
-import TableDisplayData from './TableDisplayData'
 
 export default class MessageReview extends Component {
 
