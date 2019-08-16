@@ -22,7 +22,7 @@ export default class NavBlock extends Component {
     render() {
         return (
             <div>
-                <button className="btn btn-block border" data-testid="navButton" style={{backgroundColor: "#dfe4e6", borderColor: "#868786"}} onClick={this.handleClick}>
+                <button className="btn btn-block border" data-testid="navButton" style={{backgroundColor: "#EBF4FC", borderColor: "#868786"}} onClick={this.handleClick}>
                 <FontAwesomeIcon icon={this.props.icon}/><strong> {this.props.title}</strong></button>
                 <SlideDown className={'my-dropdown-slidedown'}>
                     {this.state.childrenVisible ? <NavItem links={this.props.links}/> : null}
