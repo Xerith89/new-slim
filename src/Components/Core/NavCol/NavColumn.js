@@ -9,6 +9,16 @@ export default class NavColumn extends Component {
     render() {
         
     //This stores the links for the claims section of the Nav
+
+    const generalLinks = {
+        links: [
+            "Dashboard",
+            "My Holidays",
+            "Reports",
+            "Another Link"
+        ]
+    }
+
     const claimsLinks = {
         links: [
             "New Claim",
@@ -48,6 +58,7 @@ export default class NavColumn extends Component {
             <div>
                 <div id="navMenu" data-testid="navcol" className="card text-center ml-2 mt-2 mb-5 mr-5" style={{ width: '18rem'}}>
                     <div className="card-body p-0">
+                        <NavBlock title="General" links={generalLinks.links} />
                         <NavBlock title="Claims" links={claimsLinks.links} />
                         <NavBlock title="Underwriting" links={underwritingLinks.links} />
                         <NavBlock title="Accounts" links={accountsLinks.links} />
