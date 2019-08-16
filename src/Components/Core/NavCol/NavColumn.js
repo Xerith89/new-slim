@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NavBlock from './NavBlock'
+import { faGlobeEurope, faCoins, faStore, faTools, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 // This component renders on the left of the screen and provides navigation links for the app
 
@@ -58,11 +59,11 @@ export default class NavColumn extends Component {
             <div>
                 <div id="navMenu" data-testid="navcol" className="card text-center ml-2 mt-2 mb-5 mr-5" style={{ width: '18rem'}}>
                     <div className="card-body p-0">
-                        <NavBlock title="General" links={generalLinks.links} />
-                        <NavBlock title="Claims" links={claimsLinks.links} />
-                        <NavBlock title="Underwriting" links={underwritingLinks.links} />
-                        <NavBlock title="Accounts" links={accountsLinks.links} />
-                        <NavBlock title="Agency" links={agencyLinks.links} />
+                        <NavBlock title="General" icon={faGlobeEurope}links={generalLinks.links} />
+                        <NavBlock title="Claims" icon={faTools} links={claimsLinks.links} />
+                        <NavBlock title="Underwriting" icon={faPencilAlt} links={underwritingLinks.links} />
+                        <NavBlock title="Accounts" icon={faCoins} links={accountsLinks.links} />
+                        <NavBlock title="Agency" icon={faStore} links={agencyLinks.links} />
                     </div>
                 </div>
             </div>
