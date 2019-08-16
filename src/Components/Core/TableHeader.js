@@ -9,8 +9,29 @@ export default class TableHeader extends Component {
         super(props)
 
         this.state = {
-            sortedTasks: this.props.taskList
+            tasks : this.props.taskList,
+            sortedTasks: []
         }
+    }
+
+    handleClick = (event) => {
+        const sorted = [...this.state.tasks];
+        sorted.sort((a,b) => {
+            const genreA = a.taskName.toUpperCase();
+            const genreB = b.taskName.toUpperCase();
+          
+            let comparison = 0;
+            if (genreA < genreB) {
+              comparison = 1;
+            } else if (genreA > genreB) {
+              comparison = -1;
+            }
+            return comparison;
+        });
+        this.setState({
+            sortedTasks: sorted
+        })
+        console.log(sorted);
     }
 
     render() {
@@ -21,11 +42,11 @@ export default class TableHeader extends Component {
                         <thead>
                             <tr>
                                 {tableOptions.map((option,i) => {
-                                    return (<th scope="col" key={i}>{option} <button style={{border: '0', padding: '0', background: 'none'}} data-toggle="tooltip" data-placement="top" title="Sort"><FontAwesomeIcon icon={faSort}/></button></th>)
+                                    return (<th scope="col" key={i}>{option} <button id={i} onClick={this.handleClick} style={{border: '0', padding: '0', background: 'none'}} data-toggle="tooltip" data-placement="top" title="Sort"><FontAwesomeIcon icon={faSort}/></button></th>)
                                 })}
                             </tr>
                         </thead>
-                        <DisplayTasks taskList={this.state.sortedTasks} />
+                        {this.state.sortedTasks.length ? <DisplayTasks taskList={this.state.sortedTasks}/> : <DisplayTasks taskList={this.state.tasks} /> } 
                     </table>
                 </div>
             </div>
