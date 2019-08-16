@@ -35,7 +35,7 @@ const filterOptions =
 ]
 
 const tableOptions = [
-    'Task Name', 'Raised On', 'Type', 'Assigned To', 'Priority', 'Due Date'
+    'Task Name', 'Spec/Claim No', 'Type', 'Assigned To', 'Priority', 'Due Date'
 ]
 
 module.exports = {
