@@ -36,7 +36,7 @@ export default class FilterBar extends Component {
                        
                        </div>
                  </div>
-                 <TableHeader taskList={this.state.tasksFiltered}/>
+                 <TableHeader fetchingTasks={this.props.fetchingTasks} taskList={this.state.tasksFiltered}/>
             </div>
         )
     }

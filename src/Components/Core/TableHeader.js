@@ -4,6 +4,7 @@ import { faSort} from '@fortawesome/free-solid-svg-icons'
 import {tableOptions} from '../Util/TasksConfig'
 import DisplayTasks from './DisplayTasks'
 import {sortType} from '../Util/Enums'
+import Spinner from './Spinner';
 
 export default class TableHeader extends Component {
     constructor(props) {
@@ -71,6 +72,13 @@ export default class TableHeader extends Component {
     }
 
     render() {
+        let displayTasks;
+        if (this.state.sortedTasks.length && !this.props.fetchingTasks) {
+           displayTasks = <DisplayTasks taskList={this.state.sortedTasks}/>;
+        } else if (!this.state.sortedTasks.length && !this.props.fetchingTasks) {
+           displayTasks = <DisplayTasks taskList={this.state.tasks} />;
+        }
+
         return (
             <div>
                 <div className="m-3">
@@ -82,8 +90,9 @@ export default class TableHeader extends Component {
                                 })}
                             </tr>
                         </thead>
-                        {this.state.sortedTasks.length ? <DisplayTasks taskList={this.state.sortedTasks}/> : <DisplayTasks taskList={this.state.tasks} /> } 
+                        {displayTasks} 
                     </table>
+                    {this.props.fetchingTasks ? <Spinner /> : null}
                 </div>
             </div>
         )

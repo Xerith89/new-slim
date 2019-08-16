@@ -3,7 +3,6 @@ import FilterBar from './FilterBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 import Pagination from './Pagination'
-import Spinner from './Spinner'
 
 export default class Tasks extends Component {
 
@@ -76,6 +75,7 @@ export default class Tasks extends Component {
     // }
 
     render() {
+ 
         return (
             <div >
                 <div className="mt-5">
@@ -83,8 +83,7 @@ export default class Tasks extends Component {
                         <h2 className="card-header text-center" style={{backgroundColor: "#ebf2fc"}}><FontAwesomeIcon icon={faEdit}/> 
                          Tasks <span className="badge badge-dark">{this.state.taskList.length}</span></h2>
                         <div className="card-body bg-white">
-                            <FilterBar taskList={this.state.taskList} />
-                            {this.state.fetchingTasks ? <Spinner /> : null}
+                            <FilterBar fetchingTasks={this.state.fetchingTasks} taskList={this.state.taskList} />
                             <Pagination totalRecords={50}/>
                         </div>
                     </div> 
