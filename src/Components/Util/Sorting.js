@@ -1,25 +1,28 @@
-const sortAscending = sort((a,b) => {
-    const genreA = a.taskName.toUpperCase();
-    const genreB = b.taskName.toUpperCase();
+function sortAscending(inputObjectArray, sortProperty) {
+    inputObjectArray.sort((a,b) => {
+        const aUpper = a[sortProperty].toUpperCase();
+        const bUpper = b[sortProperty].toUpperCase();
+        if (aUpper < bUpper) {
+            return true;
+        } else if (aUpper > bUpper) {
+            return false;
+        }
+    });
+}
 
-    let comparison = 0;
-    if (genreA < genreB) {
-    comparison = 1;
-    } else if (genreA > genreB) {
-    comparison = -1;
+function sortDescending(inputObjectArray, sortProperty) { 
+    inputObjectArray.sort((a,b) => {
+    const aUpper = a[sortProperty].toUpperCase();
+    const bUpper = b[sortProperty].toUpperCase();
+    if (aUpper > bUpper) {
+        return true;
+    } else if (aUpper < bUpper) {
+        return false;
     }
-    return comparison;
 });
+}
 
-const sortDescending = sort((a,b) => {
-    const genreA = a.taskName.toUpperCase();
-    const genreB = b.taskName.toUpperCase();
-
-    let comparison = 0;
-    if (genreA > genreB) {
-    comparison = 1;
-    } else if (genreA < genreB) {
-    comparison = -1;
-    }
-    return comparison;
-});
+module.exports = {
+    sortAscending:sortAscending,
+    sortDescending:sortDescending
+}

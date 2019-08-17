@@ -1,5 +1,5 @@
 import React from 'react';
-import NavColumn from '../Components/Core/NavColumn';
+import NavColumn from '../Components/Core/NavCol/NavColumn';
 import {render, cleanup, fireEvent} from '@testing-library/react';
 
 

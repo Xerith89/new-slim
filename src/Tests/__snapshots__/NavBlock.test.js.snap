@@ -2,6 +2,7 @@
 
 exports[`NavBlock component renders to the DOM 1`] = `
 <strong>
+   
   Underwriting
 </strong>
 `;

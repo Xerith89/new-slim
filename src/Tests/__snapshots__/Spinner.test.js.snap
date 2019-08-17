@@ -12,7 +12,9 @@ exports[`Spinner component renders to the DOM 1`] = `
     <span
       class="sr-only"
     >
-      Loading...
+      <h3>
+        Loading...
+      </h3>
     </span>
   </div>
 </div>

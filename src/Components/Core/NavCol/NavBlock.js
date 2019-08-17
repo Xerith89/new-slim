@@ -34,5 +34,6 @@ export default class NavBlock extends Component {
 
 NavBlock.propTypes = {
     title: PropTypes.string,
-    links: PropTypes.array
+    links: PropTypes.array,
+    icon: PropTypes.object
 };
