@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, cleanup, fireEvent} from '@testing-library/react';
+import {render, cleanup} from '@testing-library/react';
 import TableHeader from './../Components/Core/TableHeader';
 import {shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -53,7 +53,7 @@ test('TableHeader Renders To The Dom Without Spinner', () => {
     expect(getByTestId('tableHeader')).toMatchSnapshot();
 });
 
-test('Sorting Function Fires On Click', () => {
+test('Sorting Function Fires On Task Name Click', () => {
     const spy = jest.fn();
     let wrapper = shallow(<TableHeader taskList={taskList} fetchingTasks={false}/>);
     wrapper.instance().handleClick = spy;
@@ -65,6 +65,82 @@ test('Sorting Function Fires On Click', () => {
     expect(wrapper.instance().handleClick).toHaveBeenCalled();
     expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(1);
     expect(wrapper.instance().doSort).toHaveBeenCalled();
+    wrapper.unmount();
+});
+
+test('Sorting Function Fires On Spec/Claim No Click', () => {
+    const spy = jest.fn();
+    let wrapper = shallow(<TableHeader taskList={taskList} fetchingTasks={false}/>);
+    wrapper.instance().handleClick = spy;
+    wrapper.instance().doSort = spy;
+    wrapper.instance().forceUpdate();
+    wrapper.update();
+    expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
+    wrapper.find('#id-1').simulate('click');
+    expect(wrapper.instance().handleClick).toHaveBeenCalled();
+    expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(1);
+    expect(wrapper.instance().doSort).toHaveBeenCalled();
+    wrapper.unmount();
+});
+
+test('Sorting Function Fires On Type Click', () => {
+    const spy = jest.fn();
+    let wrapper = shallow(<TableHeader taskList={taskList} fetchingTasks={false}/>);
+    wrapper.instance().handleClick = spy;
+    wrapper.instance().doSort = spy;
+    wrapper.instance().forceUpdate();
+    wrapper.update();
+    expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
+    wrapper.find('#id-2').simulate('click');
+    expect(wrapper.instance().handleClick).toHaveBeenCalled();
+    expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(1);
+    expect(wrapper.instance().doSort).toHaveBeenCalled();
+    wrapper.unmount();
+});
+
+test('Sorting Function Fires On Assigned To Click', () => {
+    const spy = jest.fn();
+    let wrapper = shallow(<TableHeader taskList={taskList} fetchingTasks={false}/>);
+    wrapper.instance().handleClick = spy;
+    wrapper.instance().doSort = spy;
+    wrapper.instance().forceUpdate();
+    wrapper.update();
+    expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
+    wrapper.find('#id-3').simulate('click');
+    expect(wrapper.instance().handleClick).toHaveBeenCalled();
+    expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(1);
+    expect(wrapper.instance().doSort).toHaveBeenCalled();
+    wrapper.unmount();
+});
+
+test('Sorting Function Fires On Priority Click', () => {
+    const spy = jest.fn();
+    let wrapper = shallow(<TableHeader taskList={taskList} fetchingTasks={false}/>);
+    wrapper.instance().handleClick = spy;
+    wrapper.instance().doSort = spy;
+    wrapper.instance().forceUpdate();
+    wrapper.update();
+    expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
+    wrapper.find('#id-4').simulate('click');
+    expect(wrapper.instance().handleClick).toHaveBeenCalled();
+    expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(1);
+    expect(wrapper.instance().doSort).toHaveBeenCalled();
+    wrapper.unmount();
+});
+
+test('Sorting Function Fires On Due Date Click', () => {
+    const spy = jest.fn();
+    let wrapper = shallow(<TableHeader taskList={taskList} fetchingTasks={false}/>);
+    wrapper.instance().handleClick = spy;
+    wrapper.instance().doSort = spy;
+    wrapper.instance().forceUpdate();
+    wrapper.update();
+    expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
+    wrapper.find('#id-4').simulate('click');
+    expect(wrapper.instance().handleClick).toHaveBeenCalled();
+    expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(1);
+    expect(wrapper.instance().doSort).toHaveBeenCalled();
+    wrapper.unmount();
 });
 
 
