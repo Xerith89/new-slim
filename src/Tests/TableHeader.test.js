@@ -57,11 +57,14 @@ test('Sorting Function Fires On Click', () => {
     const spy = jest.fn();
     let wrapper = shallow(<TableHeader taskList={taskList} fetchingTasks={false}/>);
     wrapper.instance().handleClick = spy;
+    wrapper.instance().doSort = spy;
     wrapper.instance().forceUpdate();
     wrapper.update();
     expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
     wrapper.find('#id-0').simulate('click');
     expect(wrapper.instance().handleClick).toHaveBeenCalled();
+    expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(1);
+    expect(wrapper.instance().doSort).toHaveBeenCalled();
 });
 
 
