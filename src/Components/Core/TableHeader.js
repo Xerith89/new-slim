@@ -5,6 +5,7 @@ import {tableOptions} from '../Util/TasksConfig'
 import DisplayTasks from './DisplayTasks'
 import {sortType} from '../Util/Enums'
 import Spinner from './Spinner';
+import {sortAscending, sortDescending} from '../Util/Sorting'
 
 export default class TableHeader extends Component {
     constructor(props) {
@@ -13,61 +14,42 @@ export default class TableHeader extends Component {
         this.state = {
             tasks : this.props.taskList,
             sortedTasks: [],
-            sortTaskNameAscending: sortType.DEFAULT,
-            sortNumberAscending: true,
-            sortTypeAscending: true,
-            sortAssignedToAscending: true,
-            sortPriorityAscending: true,
-            sortDueDateAscending: true
+            nextSortTaskName: sortType.ASCENDING,
+            nextSortNumber: sortType.ASCENDING,
+            nextSortType: sortType.ASCENDING,
+            nextSortAssignedTo: sortType.ASCENDING,
+            nextSortPriority: sortType.ASCENDING,
+            nextsortDueDate: sortType.ASCENDING
         }
     }
 
     handleClick = (event) => {
         const sorted = [...this.state.tasks];
-
-        switch (this.state.sortTaskNameAscending) {
+        switch (this.state.nextSortTaskName) {
             case sortType.DEFAULT:
                 this.setState({
-                    sortedTasks: this.props.taskList,
-                    sortTaskNameAscending: sortType.ASCENDING
+                   sortedTasks: this.props.taskList,
+                   nextSortTaskName: sortType.ASCENDING
                 });
                 break;
             case sortType.ASCENDING:
-                sorted.sort((a,b) => {
-                    const genreA = a.taskName.toUpperCase();
-                    const genreB = b.taskName.toUpperCase();
-                
-                    let comparison = 0;
-                    if (genreA < genreB) {
-                    comparison = 1;
-                    } else if (genreA > genreB) {
-                    comparison = -1;
-                    }
-                    return comparison;
-                });
+                sortAscending(sorted,'taskName');
                 this.setState({
                     sortedTasks: sorted,
-                    sortTaskNameAscending: sortType.DESECENDING
+                    nextSortTaskName: sortType.DESECENDING
                 });
                 break;
             case sortType.DESECENDING:
-                sorted.sort((a,b) => {
-                    const genreA = a.taskName.toUpperCase();
-                    const genreB = b.taskName.toUpperCase();
-                
-                    let comparison = 0;
-                    if (genreA > genreB) {
-                    comparison = 1;
-                    } else if (genreA < genreB) {
-                    comparison = -1;
-                    }
-                    return comparison;
-                });
+                sortDescending(sorted, 'taskName');
                 this.setState({
                     sortedTasks: sorted,
-                    sortTaskNameAscending: sortType.DEFAULT
+                    nextSortTaskName: sortType.DEFAULT
                 });
                 break;
+            default:
+                console.log("Default case");
+                break;
+
         }
     }
 
@@ -76,7 +58,7 @@ export default class TableHeader extends Component {
         if (this.state.sortedTasks.length && !this.props.fetchingTasks) {
            displayTasks = <DisplayTasks taskList={this.state.sortedTasks}/>;
         } else if (!this.state.sortedTasks.length && !this.props.fetchingTasks) {
-           displayTasks = <DisplayTasks taskList={this.state.tasks} />;
+           displayTasks = <DisplayTasks taskList={this.props.taskList} />;
         }
 
         return (
