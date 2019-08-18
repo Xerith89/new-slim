@@ -6,14 +6,14 @@ import DisplayTasks from './DisplayTasks'
 import {sortType} from '../Util/Enums'
 import Spinner from './Spinner';
 import {sortAscending, sortDescending} from '../Util/Sorting'
+import { PropTypes } from 'prop-types';
 
 export default class TableHeader extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            tasks : this.props.taskList,
-            sortedTasks: [],
+            sortedTasks: this.props.taskList,
             nextSortTaskName: sortType.ASCENDING,
             nextSortNumber: sortType.ASCENDING,
             nextSortType: sortType.ASCENDING,
@@ -23,8 +23,8 @@ export default class TableHeader extends Component {
         }
     }
 
-    handleClick = (event) => {
-        const sorted = [...this.state.tasks];
+    doSort = (propertyName) => {
+        const sorted = [...this.state.sortedTasks];
         switch (this.state.nextSortTaskName) {
             case sortType.DEFAULT:
                 this.setState({
@@ -33,50 +33,75 @@ export default class TableHeader extends Component {
                 });
                 break;
             case sortType.ASCENDING:
-                sortAscending(sorted,'taskName');
+                sortAscending(sorted, propertyName);
                 this.setState({
                     sortedTasks: sorted,
                     nextSortTaskName: sortType.DESECENDING
                 });
                 break;
             case sortType.DESECENDING:
-                sortDescending(sorted, 'taskName');
+                sortDescending(sorted, propertyName);
                 this.setState({
                     sortedTasks: sorted,
                     nextSortTaskName: sortType.DEFAULT
                 });
                 break;
             default:
-                console.log("Default case");
                 break;
 
         }
     }
 
-    render() {
-        let displayTasks;
-        if (this.state.sortedTasks.length && !this.props.fetchingTasks) {
-           displayTasks = <DisplayTasks taskList={this.state.sortedTasks}/>;
-        } else if (!this.state.sortedTasks.length && !this.props.fetchingTasks) {
-           displayTasks = <DisplayTasks taskList={this.props.taskList} />;
-        }
+    //Switch on button ID to call sort on the correct property
+    handleClick = (event) => {
+        switch(event) {
+            case 0:
+                this.doSort('taskName');
+                break;
+            case 1:
+                this.doSort('claimSpecNo');
+                break;
+            case 2:
+                this.doSort('type');
+                break;
+            case 3:
+                this.doSort('assignedTo');
+                break;
+            case 4:
+                this.doSort('priority');
+                break;
+            case 5:
+                this.doSort('dueDate');
+                break;
+            default:
+                break;
+        }    
+    }
 
+    render() {
         return (
             <div>
-                <div className="m-3">
+                <div className="m-3" data-testid="tableHeader">
                     <table className="table table-hover table-bordered">
                         <thead>
                             <tr>
                                 {tableOptions.map((option,i) => {
-                                    return (<th scope="col" key={i}>{option} <button id={i} onClick={this.handleClick} style={{border: '0', padding: '0', background: 'none'}} data-toggle="tooltip" data-placement="top" title="Sort"><FontAwesomeIcon icon={faSort}/></button></th>)
+                                    return (<th scope="col" key={i}>{option} <button id={`id-${i}`} onClick={this.handleClick.bind(this, i)} 
+                                    style={{border: '0', padding: '0', background: 'none'}} data-toggle="tooltip" data-placement="top" title={`Sort By ${option}`}>
+                                    <FontAwesomeIcon icon={faSort}/></button></th>)
                                 })}
                             </tr>
                         </thead>
-                        {displayTasks} 
+                        {this.props.fetchingTasks ? null : <DisplayTasks taskList={this.state.sortedTasks}/>} 
                     </table>
                     {this.props.fetchingTasks ? <Spinner /> : null}
                 </div>
             </div>
         )
     }
+}
+
+TableHeader.propTypes = {
+    fetchingTasks: PropTypes.bool,
+    taskList: PropTypes.array
 }

@@ -1,0 +1,395 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableHeader Renders To The Dom Without Spinner 1`] = `
+<div
+  class="m-3"
+  data-testid="tableHeader"
+>
+  <table
+    class="table table-hover table-bordered"
+  >
+    <thead>
+      <tr>
+        <th
+          scope="col"
+        >
+          Task Name
+           
+          <button
+            data-placement="top"
+            data-toggle="tooltip"
+            id="id-0"
+            style="border: 0px; padding: 0px; background: none;"
+            title="Sort By Task Name"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-sort fa-w-10 "
+              data-icon="sort"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </th>
+        <th
+          scope="col"
+        >
+          Spec/Claim No
+           
+          <button
+            data-placement="top"
+            data-toggle="tooltip"
+            id="id-1"
+            style="border: 0px; padding: 0px; background: none;"
+            title="Sort By Spec/Claim No"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-sort fa-w-10 "
+              data-icon="sort"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </th>
+        <th
+          scope="col"
+        >
+          Type
+           
+          <button
+            data-placement="top"
+            data-toggle="tooltip"
+            id="id-2"
+            style="border: 0px; padding: 0px; background: none;"
+            title="Sort By Type"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-sort fa-w-10 "
+              data-icon="sort"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </th>
+        <th
+          scope="col"
+        >
+          Assigned To
+           
+          <button
+            data-placement="top"
+            data-toggle="tooltip"
+            id="id-3"
+            style="border: 0px; padding: 0px; background: none;"
+            title="Sort By Assigned To"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-sort fa-w-10 "
+              data-icon="sort"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </th>
+        <th
+          scope="col"
+        >
+          Priority
+           
+          <button
+            data-placement="top"
+            data-toggle="tooltip"
+            id="id-4"
+            style="border: 0px; padding: 0px; background: none;"
+            title="Sort By Priority"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-sort fa-w-10 "
+              data-icon="sort"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </th>
+        <th
+          scope="col"
+        >
+          Due Date
+           
+          <button
+            data-placement="top"
+            data-toggle="tooltip"
+            id="id-5"
+            style="border: 0px; padding: 0px; background: none;"
+            title="Sort By Due Date"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-sort fa-w-10 "
+              data-icon="sort"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      data-testid="tasks"
+    >
+      <tr>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            Review New Claim
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            5500001
+          </a>
+        </td>
+        <td>
+          <a
+            href="/Claim/1"
+            style="display: block;"
+          >
+            Claim
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            Alex Coupe
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            Normal
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            01-09-2019
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            Review New Invoice
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            5500000
+          </a>
+        </td>
+        <td>
+          <a
+            href="/Claim/2"
+            style="display: block;"
+          >
+            Claim
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            Alex Coupe
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            Normal
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            01-09-2019
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            Diary Review
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            5500244
+          </a>
+        </td>
+        <td>
+          <a
+            href="/Claim/3"
+            style="display: block;"
+          >
+            Claim
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            Donald Duck
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            Urgent
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            29-09-2019
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            Loss Adjustor Report Received
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            5500044
+          </a>
+        </td>
+        <td>
+          <a
+            href="/Claim/4"
+            style="display: block;"
+          >
+            Claim
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            Peter Parker
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            Urgent
+          </a>
+        </td>
+        <td>
+          <a
+            href="/NaN"
+            style="display: block;"
+          >
+            05-09-2019
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
