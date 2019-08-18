@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function DisplayTasks(props) {
     return (
-        <tbody>
+        <tbody data-testid='tasks'>
         {props.taskList && props.taskList.map((task) => {
             return (
             <tr key={task.id}>
