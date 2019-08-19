@@ -17,7 +17,7 @@ export default class Tasks extends Component {
                 taskName: 'Review New Claim',
                 claimSpecNo: '5500001',
                 type: 'Claim', 
-                assignedTo: 'Alex Coupe',
+                assigned: 'Alex Coupe',
                 priority: 'Normal',
                 dueDate: '01-09-2019'
             },
@@ -26,7 +26,7 @@ export default class Tasks extends Component {
                 taskName: 'Review New Invoice',
                 claimSpecNo: '5500000',
                 type: 'Claim', 
-                assignedTo: 'Alex Coupe',
+                assigned: 'Alex Coupe',
                 priority: 'Normal',
                 dueDate: '01-09-2019'
             },
@@ -34,19 +34,19 @@ export default class Tasks extends Component {
                 id: 3,
                 taskName: 'Diary Review',
                 claimSpecNo: '5500244',
-                type: 'Claim', 
-                assignedTo: 'Donald Duck',
+                type: 'Specification', 
+                assigned: 'Donald Duck',
                 priority: 'Urgent',
-                dueDate: '29-09-2019'
+                dueDate: '05-09-2019'
             },
             {
                 id: 4,
                 taskName: 'Loss Adjustor Report Received',
                 claimSpecNo: '5500044',
                 type: 'Claim', 
-                assignedTo: 'Peter Parker',
+                assigned: 'Peter Parker',
                 priority: 'Urgent',
-                dueDate: '05-09-2019'
+                dueDate: '29-09-2019'
             },
         ],
             fetchingTasks: true

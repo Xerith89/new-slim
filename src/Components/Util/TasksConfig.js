@@ -1,22 +1,21 @@
 const filterOptions = 
 [
-    {
-        header: 'Name',
-        body: [
-            '',
-            'Review New Claim',
-            'Review New Invoice',
-            'Diary Review',
-            'Loss Adjustor Report Received'
-        ]
-    },
-
+    
     {
         header: 'Type',
         body: [
             '',
             'Claim',
-            'Specialisation'
+            'Specification'
+        ]
+    },
+    {
+        header: 'Assigned',
+        body: [
+            '',
+            'Alex Coupe',
+            'Donald Duck',
+            'Peter Parker'
         ]
     },
 
@@ -28,20 +27,11 @@ const filterOptions =
             'Urgent'
         ]
     },
-    {
-        header: 'Due Date',
-        body: [
-            '',
-            'Next 7 Days',
-            'Next 14 Days',
-            'Next Month',
-            'Custom'
-        ]
-    },
+   
 ]
 
 const tableOptions = [
-    'Name', 'Spec/Claim No', 'Type', 'Assigned To', 'Priority', 'Due Date'
+    'Name', 'Spec/Claim No', 'Type', 'Assigned', 'Priority', 'Due Date'
 ]
 
 module.exports = {
