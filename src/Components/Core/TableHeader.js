@@ -23,6 +23,12 @@ export default class TableHeader extends Component {
         }
     }
 
+    componentDidUpdate(prevProps) {
+        if(prevProps.taskList !== this.props.taskList) {
+          this.setState({sortedTasks: this.props.taskList,});
+        }
+      }
+
     doSort = (propertyName) => {
         const sorted = [...this.state.sortedTasks];
         switch (this.state.nextSortTaskName) {
@@ -79,6 +85,7 @@ export default class TableHeader extends Component {
     }
 
     render() {
+      
         return (
             <div>
                 <div className="m-3" data-testid="tableHeader">
