@@ -17,11 +17,6 @@ export default class FilterBar extends Component {
         }
     }
 
-    doFilter = (inputArray, propertyName, inputstring) => {
-        const result = filterByString(inputArray, propertyName, inputstring);
-        return result;
-    }
-
     clearfilter = () => {
         this.setState({
             dataFiltered: this.props.taskList,
@@ -41,12 +36,12 @@ export default class FilterBar extends Component {
         }
         else if (event.target.value !== '' && this.state[event.target.name] !== '') {
             this.setState({
-                dataFiltered: this.doFilter(this.props.taskList, [event.target.name.toLowerCase()], event.target.value),
+                dataFiltered: filterByString(this.props.taskList, [event.target.name.toLowerCase()], event.target.value),
                 [event.target.name] : event.target.value
             })
         } else {
             this.setState({
-                dataFiltered: this.doFilter(this.state.dataFiltered, [event.target.name.toLowerCase()], event.target.value),
+                dataFiltered: filterByString(this.state.dataFiltered, [event.target.name.toLowerCase()], event.target.value),
                 [event.target.name] : event.target.value
             });
         }
