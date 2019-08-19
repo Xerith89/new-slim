@@ -16,15 +16,9 @@ function sortAscending(inputObjectArray, sortProperty) {
 
 function sortDescending(inputObjectArray, sortProperty) { 
     inputObjectArray.sort((a,b) => {
-        let aUpper;
-        let bUpper;
-        if (typeof(a[sortProperty] === 'string')) { 
-            aUpper = a[sortProperty].toUpperCase();
-            bUpper = b[sortProperty].toUpperCase();
-        } else {
-            aUpper = a[sortProperty];
-            bUpper = b[sortProperty];
-        }
+        const aUpper = a[sortProperty].toUpperCase();
+        const bUpper = b[sortProperty].toUpperCase();
+        
         let comparison = 0;
         if (aUpper > bUpper) {
             comparison = 1;
