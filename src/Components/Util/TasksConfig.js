@@ -1,41 +1,47 @@
 const filterOptions = 
 [
     {
-        header: 'Tasks',
+        header: 'Name',
         body: [
-            'My Tasks',
-            'Team Tasks'
+            '',
+            'Review New Claim',
+            'Review New Invoice',
+            'Diary Review',
+            'Loss Adjustor Report Received'
         ]
     },
 
     {
-        header: 'Status',
+        header: 'Type',
         body: [
-            'Reviewed',
-            'Unreviewed'
+            '',
+            'Claim',
+            'Specialisation'
         ]
     },
 
     {
         header: 'Priority',
         body: [
+            '',
             'Normal',
             'Urgent'
         ]
     },
     {
-        header: 'Date',
+        header: 'Due Date',
         body: [
-            'Last Week',
-            'Last Two Weeks',
-            'Last Month',
+            '',
+            'Next 7 Days',
+            'Next 14 Days',
+            'Next Month',
             'Custom'
         ]
     },
 ]
 
 const tableOptions = [
-    'Task Name', 'Spec/Claim No', 'Type', 'Assigned To', 'Priority', 'Due Date'
+    'Name', 'Spec/Claim No', 'Type', 'Assigned To', 'Priority', 'Due Date'
 ]
 
 module.exports = {
