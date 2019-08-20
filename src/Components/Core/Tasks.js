@@ -41,13 +41,32 @@ export default class Tasks extends Component {
             },
             {
                 id: 4,
+                taskName: 'Review New Claim',
+                claimSpecNo: '5500008',
+                type: 'Claim', 
+                assigned: 'Donald Duck',
+                priority: 'Normal',
+                dueDate: '06-09-2019'
+            },
+            {
+                id: 5,
                 taskName: 'Loss Adjustor Report Received',
                 claimSpecNo: '5500044',
                 type: 'Claim', 
                 assigned: 'Peter Parker',
                 priority: 'Urgent',
-                dueDate: '29-09-2019'
+                dueDate: '07-09-2019'
             },
+            {
+                id: 6,
+                taskName: 'Invoice Received',
+                claimSpecNo: '5500044',
+                type: 'Claim', 
+                assigned: 'Peter Parker',
+                priority: 'Normal',
+                dueDate: '07-09-2019'
+            },
+            
         ],
             fetchingTasks: true
         }
