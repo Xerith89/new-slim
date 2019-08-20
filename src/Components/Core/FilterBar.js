@@ -35,13 +35,13 @@ export default class FilterBar extends Component {
             //Check for any other filters
             let refiltered = this.props.taskList;
             if (event.target.name !== 'Type') {
-                refiltered = filterByString(refiltered,"type",this.state.Type)
+                refiltered = filterByString(refiltered,"type",this.state.Type);
             }
             if (event.target.name !== 'Assigned') {
-                refiltered = filterByString(refiltered,"assigned",this.state.Assigned)
+                refiltered = filterByString(refiltered,"assigned",this.state.Assigned);
             }
             if (event.target.name !== 'Priority') {
-                refiltered = filterByString(refiltered,"priority",this.state.Priority)
+                refiltered = filterByString(refiltered,"priority",this.state.Priority);
             }
             this.setState({
                 dataFiltered: refiltered,
@@ -53,29 +53,27 @@ export default class FilterBar extends Component {
             let refiltered = this.props.taskList;
            
             if (this.state.Type !== '' && event.target.name !== 'Type') {
-                refiltered = filterByString(refiltered,"type",this.state.Type)
+                refiltered = filterByString(refiltered,"type",this.state.Type);
             } else if(event.target.name === 'Type') {
-                refiltered = filterByString(refiltered,"type",event.target.value)
+                refiltered = filterByString(refiltered,"type",event.target.value);
             }
-           
+
             if (this.state.Assigned !== '' && event.target.name !== 'Assigned') {
-                refiltered = filterByString(refiltered,"assigned",this.state.Assigned)
+                refiltered = filterByString(refiltered,"assigned",this.state.Assigned);
             } else if(event.target.name === 'Assigned'){
-                refiltered = filterByString(refiltered,"assigned",event.target.value)
+                refiltered = filterByString(refiltered,"assigned",event.target.value);
             }
            
             if (this.state.Priority !== '' && event.target.name !== 'Priority') {
-                refiltered = filterByString(refiltered,"priority",this.state.Priority)
+                refiltered = filterByString(refiltered,"priority",this.state.Priority);
             } else if(event.target.name === 'Priority') {
-                refiltered = filterByString(refiltered,"priority",event.target.value)
+                refiltered = filterByString(refiltered,"priority",event.target.value);
             }
-
             this.setState({
                 dataFiltered: refiltered,
                 [event.target.name] : event.target.value
             })
         } else {
-            console.log("else hit")
             this.setState({
                 dataFiltered: filterByString(this.state.dataFiltered, [event.target.name.toLowerCase()], event.target.value),
                 [event.target.name] : event.target.value
@@ -91,7 +89,7 @@ export default class FilterBar extends Component {
                  {filterOptions.map((element) => { 
                      return (<React.Fragment key={element.header}>
                                     <label className="mr-1 ml-2 mt-3 mb-2">{element.header}:</label>
-                                    <select name={element.header} value={this.state[element.header]} onChange={this.handleChange} className="form-control-sm col-sm-2 mr-2">
+                                    <select id={element.header} name={element.header} value={this.state[element.header]} onChange={this.handleChange} className="form-control-sm col-sm-2 mr-2">
                                     {element.body.map((option, j) => { 
                                     return( <option value={option} key={j}>{option}</option>)
                                     })}

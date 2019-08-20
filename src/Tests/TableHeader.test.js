@@ -59,7 +59,6 @@ test('Sorting Function Fires On Task Name Click', () => {
     wrapper.instance().handleClick = spy;
     wrapper.instance().doSort = spy;
     wrapper.instance().forceUpdate();
-    wrapper.update();
     expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
     wrapper.find('#id-0').simulate('click');
     expect(wrapper.instance().handleClick).toHaveBeenCalled();

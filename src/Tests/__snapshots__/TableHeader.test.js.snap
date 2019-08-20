@@ -13,14 +13,14 @@ exports[`TableHeader Renders To The Dom Without Spinner 1`] = `
         <th
           scope="col"
         >
-          Task Name
+          Name
            
           <button
             data-placement="top"
             data-toggle="tooltip"
             id="id-0"
             style="border: 0px; padding: 0px; background: none;"
-            title="Sort By Task Name"
+            title="Sort By Name"
           >
             <svg
               aria-hidden="true"
@@ -100,14 +100,14 @@ exports[`TableHeader Renders To The Dom Without Spinner 1`] = `
         <th
           scope="col"
         >
-          Assigned To
+          Assigned
            
           <button
             data-placement="top"
             data-toggle="tooltip"
             id="id-3"
             style="border: 0px; padding: 0px; background: none;"
-            title="Sort By Assigned To"
+            title="Sort By Assigned"
           >
             <svg
               aria-hidden="true"
@@ -191,202 +191,194 @@ exports[`TableHeader Renders To The Dom Without Spinner 1`] = `
     >
       <tr>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             Review New Claim
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             5500001
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/Claim/1"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             Claim
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
-          >
-            Alex Coupe
-          </a>
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
+          />
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             Normal
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             01-09-2019
-          </a>
+          </button>
         </td>
       </tr>
       <tr>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             Review New Invoice
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             5500000
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/Claim/2"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             Claim
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
-          >
-            Alex Coupe
-          </a>
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
+          />
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             Normal
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             01-09-2019
-          </a>
+          </button>
         </td>
       </tr>
       <tr>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             Diary Review
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             5500244
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/Claim/3"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             Claim
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
-          >
-            Donald Duck
-          </a>
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
+          />
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             Urgent
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             29-09-2019
-          </a>
+          </button>
         </td>
       </tr>
       <tr>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             Loss Adjustor Report Received
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             5500044
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/Claim/4"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             Claim
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
-          >
-            Peter Parker
-          </a>
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
+          />
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             Urgent
-          </a>
+          </button>
         </td>
         <td>
-          <a
-            href="/NaN"
-            style="display: block;"
+          <button
+            class="btn-block"
+            style="display: block; border: 0px; padding: 0px; background: none;"
           >
             05-09-2019
-          </a>
+          </button>
         </td>
       </tr>
     </tbody>
