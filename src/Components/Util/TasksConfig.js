@@ -30,11 +30,11 @@ const tasksFilterOptions =
    
 ]
 
-const tableOptions = [
+const tasksTableOptions = [
     'Name', 'Spec/Claim No', 'Type', 'Assigned', 'Priority', 'Due Date'
 ]
 
 module.exports = {
     tasksFilterOptions:tasksFilterOptions,
-    tableOptions:tableOptions
+    tasksTableOptions:tasksTableOptions
 }

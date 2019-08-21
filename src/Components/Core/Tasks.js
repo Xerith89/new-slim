@@ -3,6 +3,7 @@ import FilterBar from './FilterBar'
 import {tasksFilterOptions} from '../Util/TasksConfig'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
+import {tasksTableOptions} from '../Util/TasksConfig'
 
 export default class Tasks extends Component {
 
@@ -102,7 +103,7 @@ export default class Tasks extends Component {
                         <h2 className="card-header text-center" style={{backgroundColor: "#ebf2fc"}}><FontAwesomeIcon icon={faEdit}/> 
                          Tasks <span className="badge badge-dark">{this.state.taskList.length}</span></h2>
                         <div className="card-body bg-white">
-                            <FilterBar fetching={this.state.fetchingTasks} taskList={this.state.taskList} filterOptions={tasksFilterOptions} />
+                            <FilterBar fetching={this.state.fetchingTasks} data={this.state.taskList} filterOptions={tasksFilterOptions} tableHeaderOptions={tasksTableOptions} />
                         </div>
                     </div> 
                 </div>

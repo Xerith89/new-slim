@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export default function DisplayTasks(props) {
     return (
        <React.Fragment>
-        {props.taskList && props.taskList.map((task) => {
+        {props.finalData && props.finalData.map((task) => {
             return (
             <tr key={task.id}>
                 <td><a href={"/"+task.type/task.id} style={{display: 'block'}}>{task.taskName}</a></td>

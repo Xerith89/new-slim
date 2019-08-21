@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import FilterBar from './FilterBar'
-import {messagesFilterOptions} from '../Util/MessagesConfig'
+import {messagesFilterOptions, messagesTableOptions} from '../Util/MessagesConfig'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
@@ -28,7 +28,7 @@ export default class MessageReview extends Component {
                     <h2 className="card-header text-center" style={{backgroundColor: "#ebf2fc"}}><FontAwesomeIcon icon={faEnvelope}/> 
                          Messages <span className="badge badge-dark">{this.state.messageList.length}</span></h2>
                         <div className="card-body">
-                            <FilterBar fetching={this.state.fetchingMessages} filterOptions={messagesFilterOptions} data={this.state.messageList} />
+                            <FilterBar fetching={this.state.fetchingMessages} filterOptions={messagesFilterOptions} tableHeaderOptions={messagesTableOptions} data={this.state.messageList} />
                         </div>
                     </div> 
                 </div>

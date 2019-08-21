@@ -18,7 +18,7 @@ export default class Pagination extends Component {
         return (
             <React.Fragment>
                 <table className="table table-hover table-bordered">
-                    <TableHeader fetching={this.props.fetching} taskList={this.props.filteredData}/> 
+                    <TableHeader fetching={this.props.fetching} tableHeaderOptions={this.props.tableHeaderOptions} paginatedData={this.state.paginatedData}/> 
                 </table>
                 {this.props.fetching ? <Spinner /> : null}          
                 <div> 

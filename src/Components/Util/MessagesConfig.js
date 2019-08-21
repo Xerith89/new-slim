@@ -30,6 +30,11 @@ const messagesFilterOptions =
    
 ]
 
+const messagesTableOptions = [
+    'From', 'Subject', 'Status', 'Priority', 'Sent Date'
+]
+
 module.exports = {
-    messagesFilterOptions:messagesFilterOptions
+    messagesFilterOptions:messagesFilterOptions,
+    messagesTableOptions: messagesTableOptions
 }
