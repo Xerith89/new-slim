@@ -68,7 +68,7 @@ test('handleChange Called On Select Change', () => {
     expect(wrapper.instance().handleChange).toHaveBeenCalled();
     expect(wrapper.instance().handleChange).toHaveBeenCalledTimes(3);
     wrapper.unmount();
-})
+});
 
 
 test('Single Filter Returns Excected Results', () => {
