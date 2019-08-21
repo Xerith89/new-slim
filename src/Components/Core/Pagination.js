@@ -2,19 +2,43 @@ import React, { Component } from 'react'
 import TableHeader from './TableHeader'
 import Spinner from './Spinner'
 import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons'
 
 export default class Pagination extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentPage: 0,
-            paginatedData: this.props.filteredData
+            currentPage: 1,
+            totalRecords: this.props.filteredData.length,
+            paginatedData: this.props.filteredData.slice(this.currentPage-1,this.props.recordsPerPage),
+            finalPage: Math.ceil(this.props.filteredData.length/this.props.recordsPerPage)
+        }
+    }
+
+    handleClick = (event) => {
+       
+        if (event.currentTarget.name === 'next') {
+            this.setState({
+                currentPage: this.state.currentPage+1,
+                paginatedData: this.props.filteredData.slice(this.state.currentPage*this.props.recordsPerPage,(this.state.currentPage*this.props.recordsPerPage)+this.props.recordsPerPage),
+            })
+        } else if (event.currentTarget.name === 'previous') {
+           
+            this.setState({
+                currentPage: this.state.currentPage - 1,
+                paginatedData: this.props.filteredData.slice(this.state.currentPage/this.props.recordsPerPage,(this.state.currentPage/this.props.recordsPerPage)+this.props.recordsPerPage),
+            })
+        }
+        else {
+            let page = parseInt(event.target.value)*this.props.recordsPerPage;
+            console.log(page);
         }
     }
 
 
     render() {
-        
+        let pageNumbers = 1;
         return (
             <React.Fragment>
                 <table className="table table-hover table-bordered">
@@ -25,17 +49,16 @@ export default class Pagination extends Component {
                     <nav aria-label="Page navigation example">
                         <ul className="pagination justify-content-center">
                             <li className="page-item">
-                            <a className="page-link" href="/" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
+                            {this.state.currentPage === 1 ? <button name="previous" onClick={this.handleClick} className="btn disabled" aria-label="Previous" disabled><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button> :
+                            <button name="previous" onClick={this.handleClick} className="page-link" href="/" aria-label="Previous"><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button>} 
                             </li>
-                            <li className="page-item"><button className="page-link" href="/">1</button></li>
-                            <li className="page-item"><a className="page-link" href="/">2</a></li>
-                            <li className="page-item"><a className="page-link" href="/">3</a></li>
+                             <li className="page-item"><button className="page-link" value={pageNumbers} onClick={this.handleClick}>{pageNumbers}</button></li>
                             <li className="page-item">
-                            <a className="page-link" href="/" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
+                            {this.state.currentPage !== this.state.finalPage ? <button name="next" onClick={this.handleClick}className="page-link" aria-label="Next">
+                                <span aria-hidden="true"><FontAwesomeIcon icon={faChevronRight} /></span>
+                            </button> : <button name="next" onClick={this.handleClick}className="btn disabled" aria-label="Next" disabled>
+                                <span aria-hidden="true"><FontAwesomeIcon icon={faChevronRight} /></span>
+                            </button>}
                             </li>
                         </ul>
                     </nav>

@@ -34,6 +34,14 @@ export default class Messages extends Component {
                     priority: 'Normal',
                     sent: '01-09-2019'
                 },
+                {
+                    id: 4,
+                    from: 'Alex Coupe',
+                    subject: 'Pagination Test',
+                    status: 'Read', 
+                    priority: 'Normal',
+                    sent: '01-09-2019'
+                },
             ],
             fetchingMessages: true
         }

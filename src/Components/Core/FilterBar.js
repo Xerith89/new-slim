@@ -92,7 +92,7 @@ export default class FilterBar extends Component {
                          <button onClick={this.clearfilter} className="btn btn-primary ml-3">Clear Filter</button>
                        </div>
                  </div>
-                 <Pagination fetching={this.props.fetching} totalRecords={6} recordsPerPage={3} filteredData={this.state.filteredData} tableHeaderOptions={this.props.tableHeaderOptions}/>
+                 <Pagination fetching={this.props.fetching} recordsPerPage={1} filteredData={this.state.filteredData} tableHeaderOptions={this.props.tableHeaderOptions}/>
             </div>
         )
     }
