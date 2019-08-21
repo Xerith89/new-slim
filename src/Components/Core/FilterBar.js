@@ -10,7 +10,7 @@ export default class FilterBar extends Component {
         super(props)
 
         this.state = {
-            dataFiltered:  this.props.taskList,
+            filteredData:  this.props.taskList,
             Type: '',
             Assigned: '',
             Priority: ''
@@ -19,7 +19,7 @@ export default class FilterBar extends Component {
 
     clearfilter = () => {
         this.setState({
-            dataFiltered: this.props.taskList,
+            filteredData: this.props.taskList,
             Type: '',
             Assigned: '',
             Priority: ''
@@ -44,7 +44,7 @@ export default class FilterBar extends Component {
                 refiltered = filterByString(refiltered,"priority",this.state.Priority);
             }
             this.setState({
-                dataFiltered: refiltered,
+                filteredData: refiltered,
                 [event.target.name] : event.target.value  
             })
         }
@@ -70,12 +70,12 @@ export default class FilterBar extends Component {
                 refiltered = filterByString(refiltered,"priority",event.target.value);
             }
             this.setState({
-                dataFiltered: refiltered,
+                filteredData: refiltered,
                 [event.target.name] : event.target.value
             })
         } else {
             this.setState({
-                dataFiltered: filterByString(this.state.dataFiltered, [event.target.name.toLowerCase()], event.target.value),
+                filteredData: filterByString(this.state.filteredData, [event.target.name.toLowerCase()], event.target.value),
                 [event.target.name] : event.target.value
             });
         }
@@ -99,7 +99,7 @@ export default class FilterBar extends Component {
                          <button onClick={this.clearfilter} className="btn btn-primary ml-3">Clear Filter</button>
                        </div>
                  </div>
-                 <Pagination fetchingTasks={this.props.fetchingTasks} dataFiltered={this.state.dataFiltered}/>
+                 <Pagination fetchingTasks={this.props.fetchingTasks} totalRecords={6} recordsPerPage={3} filteredData={this.state.filteredData}/>
             </div>
         )
     }

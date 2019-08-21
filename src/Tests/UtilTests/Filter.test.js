@@ -1,4 +1,4 @@
-import {filterBy} from '../../Components/Util/Filter'
+import {filterByString} from '../../Components/Util/Filter'
 const objectsToFilter = [
     {
         id: 1,
@@ -39,8 +39,7 @@ const objectsToFilter = [
 ]
 
 test('Filters Array To Return Only Selected Property', () => {
-    objectsToFilter;
-    let filtered = filterBy(objectsToFilter, 'assignedTo', 'Alex Coupe');
+    let filtered = filterByString(objectsToFilter, 'assignedTo', 'Alex Coupe');
     expect(filtered).toEqual([
         {
             id: 1,

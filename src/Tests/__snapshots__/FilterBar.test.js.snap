@@ -2,7 +2,7 @@
 
 exports[`FilterBar Renders To The Dom 1`] = `
 <div
-  class="card"
+  class="card m-4"
   data-testid="filterBar"
   id="overview"
   style="width: auto;"

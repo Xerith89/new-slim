@@ -42,40 +42,40 @@ exports[`NavColumn component renders to the DOM 1`] = `
       >
         <div>
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Dashboard
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             My Holidays
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Reports
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Another Link
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
         </div>
       </div>
@@ -112,40 +112,40 @@ exports[`NavColumn component renders to the DOM 1`] = `
       >
         <div>
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             New Claim
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Diary Reviews
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Reports
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Another Link
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
         </div>
       </div>
@@ -182,40 +182,40 @@ exports[`NavColumn component renders to the DOM 1`] = `
       >
         <div>
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             New Quote
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Renewals
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Another Link
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Another Link
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
         </div>
       </div>
@@ -252,40 +252,40 @@ exports[`NavColumn component renders to the DOM 1`] = `
       >
         <div>
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Direct Debits
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Other Accounts Stuff
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Another Link
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Another Link
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
         </div>
       </div>
@@ -322,40 +322,40 @@ exports[`NavColumn component renders to the DOM 1`] = `
       >
         <div>
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Manage Brokers
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Other Accounts Stuff
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Another Link
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
           <a
-            class=" btn btn-block btn-dark m-0"
+            class=" btn btn-block btn-secondary m-0"
             href="/"
           >
             Another Link
           </a>
           <hr
-            style="margin: 0rem; border-color: #202020;"
+            style="margin: 0rem; border-color: #2f4f4f;"
           />
         </div>
       </div>

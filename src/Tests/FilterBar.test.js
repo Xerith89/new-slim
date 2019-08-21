@@ -78,7 +78,7 @@ test('Single Filter Returns Excected Results', () => {
     input.simulate('change', {target: { name: 'Type', value: 'Claim'}});
     wrapper.update();
     expect(wrapper.state().Type).toEqual('Claim');
-    expect(wrapper.state().dataFiltered).toEqual([
+    expect(wrapper.state().filteredData).toEqual([
         {
             id: 1,
             taskName: 'Review New Claim',
@@ -110,7 +110,7 @@ test('Single Filter Returns Excected Results', () => {
     input.simulate('change', {target: { name: 'Type', value: 'Specification'}});
     wrapper.update();
     expect(wrapper.state().Type).toEqual('Specification');
-    expect(wrapper.state().dataFiltered).toEqual([{
+    expect(wrapper.state().filteredData).toEqual([{
         id: 3,
         name: 'Diary Review',
         claimSpecNo: '5500244',
@@ -122,7 +122,7 @@ test('Single Filter Returns Excected Results', () => {
     input.simulate('change', {target: { name: 'Type', value: ''}});
     wrapper.update();
     expect(wrapper.state().Type).toEqual('');
-    expect(wrapper.state().dataFiltered).toEqual([
+    expect(wrapper.state().filteredData).toEqual([
         {
             id: 1,
             taskName: 'Review New Claim',
@@ -169,7 +169,7 @@ test('Two Filters Returns Excected Results', () => {
     const inputTwo = wrapper.find('#Type');
     input.simulate('change', {target: { name: 'Priority', value: 'Urgent'}});
     expect(wrapper.state().Priority).toEqual('Urgent');
-    expect(wrapper.state().dataFiltered).toEqual([
+    expect(wrapper.state().filteredData).toEqual([
         {
             id: 3,
             name: 'Diary Review',
@@ -191,7 +191,7 @@ test('Two Filters Returns Excected Results', () => {
     inputTwo.simulate('change', {target: { name: 'Type', value: 'Claim'}});
     expect(wrapper.state().Type).toEqual('Claim');
     wrapper.update();
-    expect(wrapper.state().dataFiltered).toEqual([{
+    expect(wrapper.state().filteredData).toEqual([{
         id: 4,
         name: 'Loss Adjustor Report Received',
         claimSpecNo: '5500044',
@@ -203,7 +203,7 @@ test('Two Filters Returns Excected Results', () => {
     inputTwo.simulate('change', {target: { name: 'Type', value: 'Specification'}});
     wrapper.update();
     expect(wrapper.state().Type).toEqual('Specification');
-    expect(wrapper.state().dataFiltered).toEqual([
+    expect(wrapper.state().filteredData).toEqual([
         {
             id: 3,
             name: 'Diary Review',
@@ -215,7 +215,7 @@ test('Two Filters Returns Excected Results', () => {
         }]);
     inputTwo.simulate('change', {target: { name: 'Type', value: ''}});
     wrapper.update();
-    expect(wrapper.state().dataFiltered).toEqual([
+    expect(wrapper.state().filteredData).toEqual([
         {
             id: 3,
             name: 'Diary Review',
@@ -244,7 +244,7 @@ test('Three Filters Returns Excected Results', () => {
     const input = wrapper.find('#Type');
     inputThree.simulate('change', {target: { name: 'Priority', value: 'Urgent'}});
     expect(wrapper.state().Priority).toEqual('Urgent');
-    expect(wrapper.state().dataFiltered).toEqual([
+    expect(wrapper.state().filteredData).toEqual([
         {
             id: 3,
             name: 'Diary Review',
@@ -266,7 +266,7 @@ test('Three Filters Returns Excected Results', () => {
     inputTwo.simulate('change', {target: { name: 'Assigned', value: 'Donald Duck'}});
     expect(wrapper.state().Assigned).toEqual('Donald Duck');
     wrapper.update();
-    expect(wrapper.state().dataFiltered).toEqual([{
+    expect(wrapper.state().filteredData).toEqual([{
         id: 3,
         name: 'Diary Review',
         claimSpecNo: '5500244',
@@ -278,11 +278,11 @@ test('Three Filters Returns Excected Results', () => {
     input.simulate('change', {target: { name: 'Type', value: 'Claim'}});
     wrapper.update();
     expect(wrapper.state().Type).toEqual('Claim');
-    expect(wrapper.state().dataFiltered).toEqual([]);
+    expect(wrapper.state().filteredData).toEqual([]);
     input.simulate('change', {target: { name: 'Type', value: ''}});
     wrapper.update();
     expect(wrapper.state().Type).toEqual('');
-    expect(wrapper.state().dataFiltered).toEqual([{
+    expect(wrapper.state().filteredData).toEqual([{
         id: 3,
         name: 'Diary Review',
         claimSpecNo: '5500244',
@@ -294,7 +294,7 @@ test('Three Filters Returns Excected Results', () => {
     input.simulate('change', {target: { name: 'Assigned', value: ''}});
     wrapper.update();
     expect(wrapper.state().Assigned).toEqual('');
-    expect(wrapper.state().dataFiltered).toEqual([
+    expect(wrapper.state().filteredData).toEqual([
         {
             id: 3,
             name: 'Diary Review',
@@ -316,7 +316,7 @@ test('Three Filters Returns Excected Results', () => {
     input.simulate('change', {target: { name: 'Priority', value: ''}});
     wrapper.update();
     expect(wrapper.state().Priority).toEqual('');
-    expect(wrapper.state().dataFiltered).toEqual([
+    expect(wrapper.state().filteredData).toEqual([
         {
             id: 1,
             taskName: 'Review New Claim',
