@@ -31,7 +31,7 @@ const tasksFilterOptions =
 ]
 
 const tasksTableOptions = [
-    'Name', 'Spec/Claim No', 'Type', 'Assigned', 'Priority', 'Due Date'
+    'Name', 'Reference', 'Type', 'Assigned', 'Priority', 'Due'
 ]
 
 module.exports = {

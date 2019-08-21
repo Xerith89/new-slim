@@ -1,14 +1,5 @@
 const messagesFilterOptions = 
 [
-    
-    {
-        header: 'Status',
-        body: [
-            '',
-            'Read',
-            'Unread'
-        ]
-    },
     {
         header: 'Sender',
         body: [
@@ -18,6 +9,16 @@ const messagesFilterOptions =
             'Peter Parker'
         ]
     },
+    
+    {
+        header: 'Status',
+        body: [
+            '',
+            'Read',
+            'Unread'
+        ]
+    },
+   
 
     {
         header: 'Priority',
@@ -31,7 +32,7 @@ const messagesFilterOptions =
 ]
 
 const messagesTableOptions = [
-    'From', 'Subject', 'Status', 'Priority', 'Sent Date'
+    'From', 'Subject', 'Status', 'Priority', 'Sent'
 ]
 
 module.exports = {

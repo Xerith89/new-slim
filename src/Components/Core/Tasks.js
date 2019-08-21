@@ -15,57 +15,57 @@ export default class Tasks extends Component {
             taskList: [
             {
                 id: 1,
-                taskName: 'Review New Claim',
-                claimSpecNo: '5500001',
+                name: 'Review New Claim',
+                reference: '5500001',
                 type: 'Claim', 
                 assigned: 'Alex Coupe',
                 priority: 'Normal',
-                dueDate: '01-09-2019'
+                due: '01-09-2019'
             },
             {
                 id: 2,
-                taskName: 'Review New Invoice',
-                claimSpecNo: '5500000',
+                name: 'Review New Invoice',
+                reference: '5500000',
                 type: 'Claim', 
                 assigned: 'Alex Coupe',
                 priority: 'Normal',
-                dueDate: '01-09-2019'
+                due: '01-09-2019'
             },
             {
                 id: 3,
-                taskName: 'Diary Review',
-                claimSpecNo: '5500244',
+                name: 'Diary Review',
+                reference: '5500244',
                 type: 'Specification', 
                 assigned: 'Donald Duck',
                 priority: 'Urgent',
-                dueDate: '05-09-2019'
+                due: '05-09-2019'
             },
             {
                 id: 4,
-                taskName: 'Review New Claim',
-                claimSpecNo: '5500008',
+                name: 'Review New Claim',
+                reference: '5500008',
                 type: 'Claim', 
                 assigned: 'Donald Duck',
                 priority: 'Normal',
-                dueDate: '06-09-2019'
+                due: '06-09-2019'
             },
             {
                 id: 5,
-                taskName: 'Loss Adjustor Report Received',
-                claimSpecNo: '5500044',
+                name: 'Loss Adjustor Report Received',
+                reference: '5500044',
                 type: 'Claim', 
                 assigned: 'Peter Parker',
                 priority: 'Urgent',
-                dueDate: '07-09-2019'
+                due: '07-09-2019'
             },
             {
                 id: 6,
-                taskName: 'Invoice Received',
-                claimSpecNo: '5500044',
+                name: 'Invoice Received',
+                reference: '5500044',
                 type: 'Claim', 
                 assigned: 'Peter Parker',
                 priority: 'Normal',
-                dueDate: '07-09-2019'
+                due: '07-09-2019'
             },
             
         ],

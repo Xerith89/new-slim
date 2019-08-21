@@ -10,18 +10,12 @@ export default class FilterBar extends Component {
 
         this.state = {
             filteredData:  this.props.data,
-            Type: '',
-            Assigned: '',
-            Priority: ''
         }
     }
 
     clearfilter = () => {
         this.setState({
             filteredData: this.props.data,
-            Type: '',
-            Assigned: '',
-            Priority: ''
         })
     }
 

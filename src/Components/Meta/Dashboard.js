@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NavColumn from '../Core/NavCol/NavColumn'
 import Tasks from '../Core/Tasks'
-import MessageReview from '../Core/MessageReview'
+import Messages from '../Core/Messages'
 import Breadcrumb from '../Core/Breadcrumb'
 
 export default class Dashboard extends Component {
@@ -15,7 +15,7 @@ export default class Dashboard extends Component {
                     </div>
                     <div className="col-md-8">
                         <Tasks />
-                        <MessageReview />
+                        <Messages />
                     </div>
                 </div>
             </div>
