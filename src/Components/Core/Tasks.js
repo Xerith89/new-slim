@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FilterBar from './FilterBar'
+import {tasksFilterOptions} from '../Util/TasksConfig'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 
@@ -101,7 +102,7 @@ export default class Tasks extends Component {
                         <h2 className="card-header text-center" style={{backgroundColor: "#ebf2fc"}}><FontAwesomeIcon icon={faEdit}/> 
                          Tasks <span className="badge badge-dark">{this.state.taskList.length}</span></h2>
                         <div className="card-body bg-white">
-                            <FilterBar fetchingTasks={this.state.fetchingTasks} taskList={this.state.taskList} />
+                            <FilterBar fetching={this.state.fetchingTasks} taskList={this.state.taskList} filterOptions={tasksFilterOptions} />
                         </div>
                     </div> 
                 </div>

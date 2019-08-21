@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default function DisplayTasks(props) {
     return (
@@ -17,6 +18,10 @@ export default function DisplayTasks(props) {
         })}
     </React.Fragment>     
     )
+}
+
+DisplayTasks.propTypes = {
+    taskList: PropTypes.arrayOf(Object)
 }
 
 

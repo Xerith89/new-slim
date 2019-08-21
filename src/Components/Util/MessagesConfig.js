@@ -1,16 +1,16 @@
-const tasksFilterOptions = 
+const messagesFilterOptions = 
 [
     
     {
-        header: 'Type',
+        header: 'Status',
         body: [
             '',
-            'Claim',
-            'Specification'
+            'Read',
+            'Unread'
         ]
     },
     {
-        header: 'Assigned',
+        header: 'Sender',
         body: [
             '',
             'Alex Coupe',
@@ -30,11 +30,6 @@ const tasksFilterOptions =
    
 ]
 
-const tableOptions = [
-    'Name', 'Spec/Claim No', 'Type', 'Assigned', 'Priority', 'Due Date'
-]
-
 module.exports = {
-    tasksFilterOptions:tasksFilterOptions,
-    tableOptions:tableOptions
+    messagesFilterOptions:messagesFilterOptions
 }

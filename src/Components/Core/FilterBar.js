@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {filterOptions} from '../Util/TasksConfig'
 import {filterByString} from '../Util/Filter'
 import Pagination from './Pagination';
 
@@ -10,7 +9,7 @@ export default class FilterBar extends Component {
         super(props)
 
         this.state = {
-            filteredData:  this.props.taskList,
+            filteredData:  this.props.data,
             Type: '',
             Assigned: '',
             Priority: ''
@@ -19,7 +18,7 @@ export default class FilterBar extends Component {
 
     clearfilter = () => {
         this.setState({
-            filteredData: this.props.taskList,
+            filteredData: this.props.data,
             Type: '',
             Assigned: '',
             Priority: ''
@@ -33,7 +32,7 @@ export default class FilterBar extends Component {
         if (event.target.value === '') {
 
             //Check for any other filters
-            let refiltered = this.props.taskList;
+            let refiltered = this.props.data;
             if (event.target.name !== 'Type') {
                 refiltered = filterByString(refiltered,"type",this.state.Type);
             }
@@ -86,7 +85,7 @@ export default class FilterBar extends Component {
             <div>
                  <div id="overview" className="card m-4" style={{width: 'auto'}} data-testid="filterBar">
                  <div className="form-group m-2">
-                 {filterOptions.map((element) => { 
+                 {this.props.filterOptions && this.props.filterOptions.map((element) => { 
                      return (<React.Fragment key={element.header}>
                                     <label className="mr-1 ml-2 mt-3 mb-2">{element.header}:</label>
                                     <select id={element.header} name={element.header} value={this.state[element.header]} onChange={this.handleChange} className="form-control-sm col-sm-2 mr-2">
@@ -99,7 +98,7 @@ export default class FilterBar extends Component {
                          <button onClick={this.clearfilter} className="btn btn-primary ml-3">Clear Filter</button>
                        </div>
                  </div>
-                 <Pagination fetchingTasks={this.props.fetchingTasks} totalRecords={6} recordsPerPage={3} filteredData={this.state.filteredData}/>
+                 <Pagination fetching={this.props.fetching} totalRecords={6} recordsPerPage={3} filteredData={this.state.filteredData}/>
             </div>
         )
     }

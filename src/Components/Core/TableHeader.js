@@ -98,7 +98,7 @@ export default class TableHeader extends Component {
                 </tr>
             </thead>
             <tbody>
-                {this.props.fetchingTasks ? null : <DisplayTasks taskList={this.state.sortedTasks}/>} 
+                {this.props.fetching ? null : <DisplayTasks taskList={this.state.sortedTasks}/>} 
             </tbody>   
             </React.Fragment>
         )
