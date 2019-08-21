@@ -1,387 +1,530 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TableHeader Renders To The Dom Without Spinner 1`] = `
-<div
-  class="m-3"
-  data-testid="tableHeader"
->
-  <table
-    class="table table-hover table-bordered"
-  >
-    <thead>
-      <tr>
-        <th
-          scope="col"
+TableHeader {
+  "context": Object {},
+  "doSort": [Function],
+  "handleClick": [Function],
+  "props": Object {
+    "fetchingTasks": false,
+    "taskList": Array [
+      Object {
+        "assignedTo": "Alex Coupe",
+        "claimSpecNo": "5500001",
+        "dueDate": "01-09-2019",
+        "id": 1,
+        "priority": "Normal",
+        "taskName": "Review New Claim",
+        "type": "Claim",
+      },
+      Object {
+        "assignedTo": "Alex Coupe",
+        "claimSpecNo": "5500000",
+        "dueDate": "01-09-2019",
+        "id": 2,
+        "priority": "Normal",
+        "taskName": "Review New Invoice",
+        "type": "Claim",
+      },
+      Object {
+        "assignedTo": "Donald Duck",
+        "claimSpecNo": "5500244",
+        "dueDate": "29-09-2019",
+        "id": 3,
+        "priority": "Urgent",
+        "taskName": "Diary Review",
+        "type": "Claim",
+      },
+      Object {
+        "assignedTo": "Peter Parker",
+        "claimSpecNo": "5500044",
+        "dueDate": "05-09-2019",
+        "id": 4,
+        "priority": "Urgent",
+        "taskName": "Loss Adjustor Report Received",
+        "type": "Claim",
+      },
+    ],
+  },
+  "refs": Object {},
+  "setState": [Function],
+  "state": Object {
+    "nextSortAssignedTo": "Ascending",
+    "nextSortNumber": "Ascending",
+    "nextSortPriority": "Ascending",
+    "nextSortTaskName": "Ascending",
+    "nextSortType": "Ascending",
+    "nextsortDueDate": "Ascending",
+    "sortedTasks": Array [
+      Object {
+        "assignedTo": "Alex Coupe",
+        "claimSpecNo": "5500001",
+        "dueDate": "01-09-2019",
+        "id": 1,
+        "priority": "Normal",
+        "taskName": "Review New Claim",
+        "type": "Claim",
+      },
+      Object {
+        "assignedTo": "Alex Coupe",
+        "claimSpecNo": "5500000",
+        "dueDate": "01-09-2019",
+        "id": 2,
+        "priority": "Normal",
+        "taskName": "Review New Invoice",
+        "type": "Claim",
+      },
+      Object {
+        "assignedTo": "Donald Duck",
+        "claimSpecNo": "5500244",
+        "dueDate": "29-09-2019",
+        "id": 3,
+        "priority": "Urgent",
+        "taskName": "Diary Review",
+        "type": "Claim",
+      },
+      Object {
+        "assignedTo": "Peter Parker",
+        "claimSpecNo": "5500044",
+        "dueDate": "05-09-2019",
+        "id": 4,
+        "priority": "Urgent",
+        "taskName": "Loss Adjustor Report Received",
+        "type": "Claim",
+      },
+    ],
+  },
+  "updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": ReactShallowRenderer {
+      "_context": Object {},
+      "_didScheduleRenderPhaseUpdate": false,
+      "_dispatcher": Object {
+        "readContext": [Function],
+        "useCallback": [Function],
+        "useContext": [Function],
+        "useDebugValue": [Function],
+        "useEffect": [Function],
+        "useImperativeHandle": [Function],
+        "useLayoutEffect": [Function],
+        "useMemo": [Function],
+        "useReducer": [Function],
+        "useRef": [Function],
+        "useResponder": [Function],
+        "useState": [Function],
+      },
+      "_element": <TableHeader
+        fetchingTasks={false}
+        taskList={
+          Array [
+            Object {
+              "assignedTo": "Alex Coupe",
+              "claimSpecNo": "5500001",
+              "dueDate": "01-09-2019",
+              "id": 1,
+              "priority": "Normal",
+              "taskName": "Review New Claim",
+              "type": "Claim",
+            },
+            Object {
+              "assignedTo": "Alex Coupe",
+              "claimSpecNo": "5500000",
+              "dueDate": "01-09-2019",
+              "id": 2,
+              "priority": "Normal",
+              "taskName": "Review New Invoice",
+              "type": "Claim",
+            },
+            Object {
+              "assignedTo": "Donald Duck",
+              "claimSpecNo": "5500244",
+              "dueDate": "29-09-2019",
+              "id": 3,
+              "priority": "Urgent",
+              "taskName": "Diary Review",
+              "type": "Claim",
+            },
+            Object {
+              "assignedTo": "Peter Parker",
+              "claimSpecNo": "5500044",
+              "dueDate": "05-09-2019",
+              "id": 4,
+              "priority": "Urgent",
+              "taskName": "Loss Adjustor Report Received",
+              "type": "Claim",
+            },
+          ]
+        }
+      />,
+      "_firstWorkInProgressHook": null,
+      "_forcedUpdate": false,
+      "_instance": [Circular],
+      "_isReRender": false,
+      "_newState": null,
+      "_numberOfReRenders": 0,
+      "_renderPhaseUpdates": null,
+      "_rendered": <React.Fragment>
+        <thead
+          data-testid="tableHeader"
         >
-          Name
-           
-          <button
-            data-placement="top"
-            data-toggle="tooltip"
-            id="id-0"
-            style="border: 0px; padding: 0px; background: none;"
-            title="Sort By Name"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-sort fa-w-10 "
-              data-icon="sort"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
+          <tr>
+            <th
+              scope="col"
             >
-              <path
-                d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
-        </th>
-        <th
-          scope="col"
-        >
-          Spec/Claim No
-           
-          <button
-            data-placement="top"
-            data-toggle="tooltip"
-            id="id-1"
-            style="border: 0px; padding: 0px; background: none;"
-            title="Sort By Spec/Claim No"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-sort fa-w-10 "
-              data-icon="sort"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
+              Name
+               
+              <button
+                data-placement="top"
+                data-toggle="tooltip"
+                id="id-0"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "background": "none",
+                    "border": "0",
+                    "padding": "0",
+                  }
+                }
+                title="Sort By Name"
+              >
+                <FontAwesomeIcon
+                  border={false}
+                  className=""
+                  fixedWidth={false}
+                  flip={null}
+                  icon={
+                    Object {
+                      "icon": Array [
+                        320,
+                        512,
+                        Array [],
+                        "f0dc",
+                        "M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z",
+                      ],
+                      "iconName": "sort",
+                      "prefix": "fas",
+                    }
+                  }
+                  inverse={false}
+                  listItem={false}
+                  mask={null}
+                  pull={null}
+                  pulse={false}
+                  rotation={null}
+                  size={null}
+                  spin={false}
+                  symbol={false}
+                  title=""
+                  transform={null}
+                />
+              </button>
+            </th>
+            <th
+              scope="col"
             >
-              <path
-                d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
-        </th>
-        <th
-          scope="col"
-        >
-          Type
-           
-          <button
-            data-placement="top"
-            data-toggle="tooltip"
-            id="id-2"
-            style="border: 0px; padding: 0px; background: none;"
-            title="Sort By Type"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-sort fa-w-10 "
-              data-icon="sort"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
+              Spec/Claim No
+               
+              <button
+                data-placement="top"
+                data-toggle="tooltip"
+                id="id-1"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "background": "none",
+                    "border": "0",
+                    "padding": "0",
+                  }
+                }
+                title="Sort By Spec/Claim No"
+              >
+                <FontAwesomeIcon
+                  border={false}
+                  className=""
+                  fixedWidth={false}
+                  flip={null}
+                  icon={
+                    Object {
+                      "icon": Array [
+                        320,
+                        512,
+                        Array [],
+                        "f0dc",
+                        "M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z",
+                      ],
+                      "iconName": "sort",
+                      "prefix": "fas",
+                    }
+                  }
+                  inverse={false}
+                  listItem={false}
+                  mask={null}
+                  pull={null}
+                  pulse={false}
+                  rotation={null}
+                  size={null}
+                  spin={false}
+                  symbol={false}
+                  title=""
+                  transform={null}
+                />
+              </button>
+            </th>
+            <th
+              scope="col"
             >
-              <path
-                d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
-        </th>
-        <th
-          scope="col"
-        >
-          Assigned
-           
-          <button
-            data-placement="top"
-            data-toggle="tooltip"
-            id="id-3"
-            style="border: 0px; padding: 0px; background: none;"
-            title="Sort By Assigned"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-sort fa-w-10 "
-              data-icon="sort"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
+              Type
+               
+              <button
+                data-placement="top"
+                data-toggle="tooltip"
+                id="id-2"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "background": "none",
+                    "border": "0",
+                    "padding": "0",
+                  }
+                }
+                title="Sort By Type"
+              >
+                <FontAwesomeIcon
+                  border={false}
+                  className=""
+                  fixedWidth={false}
+                  flip={null}
+                  icon={
+                    Object {
+                      "icon": Array [
+                        320,
+                        512,
+                        Array [],
+                        "f0dc",
+                        "M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z",
+                      ],
+                      "iconName": "sort",
+                      "prefix": "fas",
+                    }
+                  }
+                  inverse={false}
+                  listItem={false}
+                  mask={null}
+                  pull={null}
+                  pulse={false}
+                  rotation={null}
+                  size={null}
+                  spin={false}
+                  symbol={false}
+                  title=""
+                  transform={null}
+                />
+              </button>
+            </th>
+            <th
+              scope="col"
             >
-              <path
-                d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
-        </th>
-        <th
-          scope="col"
-        >
-          Priority
-           
-          <button
-            data-placement="top"
-            data-toggle="tooltip"
-            id="id-4"
-            style="border: 0px; padding: 0px; background: none;"
-            title="Sort By Priority"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-sort fa-w-10 "
-              data-icon="sort"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
+              Assigned
+               
+              <button
+                data-placement="top"
+                data-toggle="tooltip"
+                id="id-3"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "background": "none",
+                    "border": "0",
+                    "padding": "0",
+                  }
+                }
+                title="Sort By Assigned"
+              >
+                <FontAwesomeIcon
+                  border={false}
+                  className=""
+                  fixedWidth={false}
+                  flip={null}
+                  icon={
+                    Object {
+                      "icon": Array [
+                        320,
+                        512,
+                        Array [],
+                        "f0dc",
+                        "M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z",
+                      ],
+                      "iconName": "sort",
+                      "prefix": "fas",
+                    }
+                  }
+                  inverse={false}
+                  listItem={false}
+                  mask={null}
+                  pull={null}
+                  pulse={false}
+                  rotation={null}
+                  size={null}
+                  spin={false}
+                  symbol={false}
+                  title=""
+                  transform={null}
+                />
+              </button>
+            </th>
+            <th
+              scope="col"
             >
-              <path
-                d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
-        </th>
-        <th
-          scope="col"
-        >
-          Due Date
-           
-          <button
-            data-placement="top"
-            data-toggle="tooltip"
-            id="id-5"
-            style="border: 0px; padding: 0px; background: none;"
-            title="Sort By Due Date"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-sort fa-w-10 "
-              data-icon="sort"
-              data-prefix="fas"
-              focusable="false"
-              role="img"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
+              Priority
+               
+              <button
+                data-placement="top"
+                data-toggle="tooltip"
+                id="id-4"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "background": "none",
+                    "border": "0",
+                    "padding": "0",
+                  }
+                }
+                title="Sort By Priority"
+              >
+                <FontAwesomeIcon
+                  border={false}
+                  className=""
+                  fixedWidth={false}
+                  flip={null}
+                  icon={
+                    Object {
+                      "icon": Array [
+                        320,
+                        512,
+                        Array [],
+                        "f0dc",
+                        "M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z",
+                      ],
+                      "iconName": "sort",
+                      "prefix": "fas",
+                    }
+                  }
+                  inverse={false}
+                  listItem={false}
+                  mask={null}
+                  pull={null}
+                  pulse={false}
+                  rotation={null}
+                  size={null}
+                  spin={false}
+                  symbol={false}
+                  title=""
+                  transform={null}
+                />
+              </button>
+            </th>
+            <th
+              scope="col"
             >
-              <path
-                d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      data-testid="tasks"
-    >
-      <tr>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            Review New Claim
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            5500001
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            Claim
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
+              Due Date
+               
+              <button
+                data-placement="top"
+                data-toggle="tooltip"
+                id="id-5"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "background": "none",
+                    "border": "0",
+                    "padding": "0",
+                  }
+                }
+                title="Sort By Due Date"
+              >
+                <FontAwesomeIcon
+                  border={false}
+                  className=""
+                  fixedWidth={false}
+                  flip={null}
+                  icon={
+                    Object {
+                      "icon": Array [
+                        320,
+                        512,
+                        Array [],
+                        "f0dc",
+                        "M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z",
+                      ],
+                      "iconName": "sort",
+                      "prefix": "fas",
+                    }
+                  }
+                  inverse={false}
+                  listItem={false}
+                  mask={null}
+                  pull={null}
+                  pulse={false}
+                  rotation={null}
+                  size={null}
+                  spin={false}
+                  symbol={false}
+                  title=""
+                  transform={null}
+                />
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <DisplayTasks
+            taskList={
+              Array [
+                Object {
+                  "assignedTo": "Alex Coupe",
+                  "claimSpecNo": "5500001",
+                  "dueDate": "01-09-2019",
+                  "id": 1,
+                  "priority": "Normal",
+                  "taskName": "Review New Claim",
+                  "type": "Claim",
+                },
+                Object {
+                  "assignedTo": "Alex Coupe",
+                  "claimSpecNo": "5500000",
+                  "dueDate": "01-09-2019",
+                  "id": 2,
+                  "priority": "Normal",
+                  "taskName": "Review New Invoice",
+                  "type": "Claim",
+                },
+                Object {
+                  "assignedTo": "Donald Duck",
+                  "claimSpecNo": "5500244",
+                  "dueDate": "29-09-2019",
+                  "id": 3,
+                  "priority": "Urgent",
+                  "taskName": "Diary Review",
+                  "type": "Claim",
+                },
+                Object {
+                  "assignedTo": "Peter Parker",
+                  "claimSpecNo": "5500044",
+                  "dueDate": "05-09-2019",
+                  "id": 4,
+                  "priority": "Urgent",
+                  "taskName": "Loss Adjustor Report Received",
+                  "type": "Claim",
+                },
+              ]
+            }
           />
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            Normal
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            01-09-2019
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            Review New Invoice
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            5500000
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            Claim
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          />
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            Normal
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            01-09-2019
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            Diary Review
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            5500244
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            Claim
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          />
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            Urgent
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            29-09-2019
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            Loss Adjustor Report Received
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            5500044
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            Claim
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          />
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            Urgent
-          </button>
-        </td>
-        <td>
-          <button
-            class="btn-block"
-            style="display: block; border: 0px; padding: 0px; background: none;"
-          >
-            05-09-2019
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+        </tbody>
+      </React.Fragment>,
+      "_rendering": false,
+      "_updater": [Circular],
+      "_workInProgressHook": null,
+    },
+  },
+}
 `;

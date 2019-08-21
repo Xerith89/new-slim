@@ -1,12 +1,9 @@
 import React from 'react';
-import {render, cleanup} from '@testing-library/react';
 import TableHeader from './../Components/Core/TableHeader';
 import {shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({adapter: new Adapter()});
-
-afterEach(cleanup);
 
 const  taskList = [
     {
@@ -49,8 +46,8 @@ const  taskList = [
 
 
 test('TableHeader Renders To The Dom Without Spinner', () => {
-    const {getByTestId} = render(<TableHeader taskList={taskList} fetchingTasks={false}/>);
-    expect(getByTestId('tableHeader')).toMatchSnapshot();
+    let wrapper = shallow(<TableHeader taskList={taskList} fetchingTasks={false}/>);
+    expect(wrapper.instance()).toMatchSnapshot();
 });
 
 test('Sorting Function Fires On Task Name Click', () => {

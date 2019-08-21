@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import TableHeader from './TableHeader'
+import Spinner from './Spinner'
 
 export default class Pagination extends Component {
     constructor(props) {
@@ -8,7 +10,12 @@ export default class Pagination extends Component {
 
     render() {
         return (
-            <div > 
+            <React.Fragment>
+            <table className="table table-hover table-bordered">
+                <TableHeader fetchingTasks={this.props.fetchingTasks} taskList={this.props.dataFiltered}/> 
+            </table>
+            {this.props.fetchingTasks ? <Spinner /> : null}          
+            <div> 
                 <nav aria-label="Page navigation example">
                     <ul className="pagination justify-content-center">
                         <li className="page-item">
@@ -27,6 +34,7 @@ export default class Pagination extends Component {
                     </ul>
                 </nav>
             </div>
+            </React.Fragment>
         )
     }
 }

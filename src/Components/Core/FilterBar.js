@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {filterOptions} from '../Util/TasksConfig'
-import TableHeader from './TableHeader'
 import {filterByString} from '../Util/Filter'
+import Pagination from './Pagination';
 
 export default class FilterBar extends Component {
 
@@ -84,7 +84,7 @@ export default class FilterBar extends Component {
     render() {
         return (
             <div>
-                 <div id="overview" className="card" style={{width: 'auto'}} data-testid="filterBar">
+                 <div id="overview" className="card m-4" style={{width: 'auto'}} data-testid="filterBar">
                  <div className="form-group m-2">
                  {filterOptions.map((element) => { 
                      return (<React.Fragment key={element.header}>
@@ -99,7 +99,7 @@ export default class FilterBar extends Component {
                          <button onClick={this.clearfilter} className="btn btn-primary ml-3">Clear Filter</button>
                        </div>
                  </div>
-                 <TableHeader fetchingTasks={this.props.fetchingTasks} taskList={this.state.dataFiltered}/>
+                 <Pagination fetchingTasks={this.props.fetchingTasks} dataFiltered={this.state.dataFiltered}/>
             </div>
         )
     }

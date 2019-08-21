@@ -4,7 +4,7 @@ import { faSort} from '@fortawesome/free-solid-svg-icons'
 import {tableOptions} from '../Util/TasksConfig'
 import DisplayTasks from './DisplayTasks'
 import {sortType} from '../Util/Enums'
-import Spinner from './Spinner';
+
 import {sortAscending, sortDescending} from '../Util/Sorting'
 import { PropTypes } from 'prop-types';
 
@@ -71,7 +71,7 @@ export default class TableHeader extends Component {
                 this.doSort('type');
                 break;
             case 3:
-                this.doSort('assignedTo');
+                this.doSort('assigned');
                 break;
             case 4:
                 this.doSort('priority');
@@ -87,23 +87,20 @@ export default class TableHeader extends Component {
     render() {
       
         return (
-            <div>
-                <div className="m-3" data-testid="tableHeader">
-                    <table className="table table-hover table-bordered">
-                        <thead>
-                            <tr>
-                                {tableOptions.map((option,i) => {
-                                    return (<th scope="col" key={i}>{option} <button id={`id-${i}`} onClick={this.handleClick.bind(this, i)} 
-                                    style={{border: '0', padding: '0', background: 'none'}} data-toggle="tooltip" data-placement="top" title={`Sort By ${option}`}>
-                                    <FontAwesomeIcon icon={faSort}/></button></th>)
-                                })}
-                            </tr>
-                        </thead>
-                        {this.props.fetchingTasks ? null : <DisplayTasks taskList={this.state.sortedTasks}/>} 
-                    </table>
-                    {this.props.fetchingTasks ? <Spinner /> : null}
-                </div>
-            </div>
+            <React.Fragment>
+            <thead data-testid="tableHeader">
+                <tr>
+                    {tableOptions.map((option,i) => {
+                        return (<th scope="col" key={i}>{option} <button id={`id-${i}`} onClick={this.handleClick.bind(this, i)} 
+                        style={{border: '0', padding: '0', background: 'none'}} data-toggle="tooltip" data-placement="top" title={`Sort By ${option}`}>
+                        <FontAwesomeIcon icon={faSort}/></button></th>)
+                    })}
+                </tr>
+            </thead>
+            <tbody>
+                {this.props.fetchingTasks ? null : <DisplayTasks taskList={this.state.sortedTasks}/>} 
+            </tbody>   
+            </React.Fragment>
         )
     }
 }

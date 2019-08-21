@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import FilterBar from './FilterBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
-import Pagination from './Pagination'
 
 export default class Tasks extends Component {
 
@@ -103,7 +102,6 @@ export default class Tasks extends Component {
                          Tasks <span className="badge badge-dark">{this.state.taskList.length}</span></h2>
                         <div className="card-body bg-white">
                             <FilterBar fetchingTasks={this.state.fetchingTasks} taskList={this.state.taskList} />
-                            <Pagination totalRecords={50}/>
                         </div>
                     </div> 
                 </div>

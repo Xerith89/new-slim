@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function DisplayTasks(props) {
     return (
-        <tbody data-testid='tasks'>
+       <React.Fragment>
         {props.taskList && props.taskList.map((task) => {
             return (
             <tr key={task.id}>
@@ -15,7 +15,7 @@ export default function DisplayTasks(props) {
             </tr>
            )
         })}
-    </tbody>     
+    </React.Fragment>     
     )
 }
 
