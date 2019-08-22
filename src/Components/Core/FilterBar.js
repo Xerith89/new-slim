@@ -27,10 +27,33 @@ export default class FilterBar extends Component {
     }
 
     handleChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value,
-            filteredData: filterByString(this.props.data,event.target.name.toLowerCase(),event.target.value)
-        })
+        let refiltered = this.props.data;
+        //We're taking off a filter so recursively check all the others that are set
+        if (event.target.value === '') {
+            this.props.filterOptions.forEach((dropdown) => {
+                if (dropdown.header !== event.target.name) {
+                    refiltered = filterByString(refiltered, dropdown.header, this.state[dropdown.header]);
+                }                
+            });
+           this.setState({
+               filteredData: refiltered,
+               [event.target.name]: event.target.value
+           });
+           //Setting a filter
+        } else {
+            this.props.filterOptions.forEach((dropdown) => {
+                if (this.state[dropdown.header] !== '' && event.target.name !== dropdown.header) {
+                    refiltered = filterByString(refiltered,dropdown.header,this.state[dropdown.header]);
+                } else if(event.target.name === dropdown.header) {
+                    refiltered = filterByString(refiltered,dropdown.header,event.target.value);
+                }
+            });
+            this.setState({
+                filteredData: refiltered,
+                [event.target.name] : event.target.value
+            });
+        }
+        
     }
    
     render() {
