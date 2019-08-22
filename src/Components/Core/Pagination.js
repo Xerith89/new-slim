@@ -14,6 +14,7 @@ export default class Pagination extends Component {
             paginatedData: this.props.filteredData.slice(this.currentPage-1,this.props.recordsPerPage),
             finalPage: Math.ceil(this.props.filteredData.length/this.props.recordsPerPage)
         }
+      
     }
 
     componentDidUpdate(prevProps) {
@@ -27,12 +28,12 @@ export default class Pagination extends Component {
       }
 
     handleClick = (event) => {
-        if (event.currentTarget.name === 'next') {
+        if (event.currentTarget.name === 'nextPage') {
             this.setState({
                 currentPage: this.state.currentPage+1,
                 paginatedData: this.props.filteredData.slice(this.state.currentPage*this.props.recordsPerPage,(this.state.currentPage*this.props.recordsPerPage)+this.props.recordsPerPage),
             })
-        } else if (event.currentTarget.name === 'previous') {
+        } else if (event.currentTarget.name === 'previousPage') {
            
             this.setState({
                 currentPage: this.state.currentPage - 1,
@@ -47,6 +48,11 @@ export default class Pagination extends Component {
 
 
     render() {
+
+        let elements = [];
+        for(let i = 1; i <= this.state.finalPage; i++) {
+            elements.push(i);
+        }
         let pageNumbers = 1;
         return (
             <React.Fragment>
@@ -58,17 +64,20 @@ export default class Pagination extends Component {
                     <nav aria-label="Page navigation example">
                         <ul className="pagination justify-content-center">
                             <li className="page-item">
-                            {this.state.currentPage === 1 ? <button name="previous" onClick={this.handleClick} className="btn disabled" aria-label="Previous" disabled><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button> :
-                            <button name="previous" onClick={this.handleClick} className="page-link" href="/" aria-label="Previous"><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button>} 
+                            {this.state.currentPage === 1 ? <button id="previousPage" name="previousPage" onClick={this.handleClick} className="btn disabled" aria-label="Previous" disabled><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button> :
+                            <button name="previousPage" onClick={this.handleClick} className="page-link" href="/" aria-label="Previous"><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button>} 
                             </li>
-                            {this.state.finalPage > 1 ? this.state.currentPage === pageNumbers ? <li className="page-item"><button className="btn disabled" value={pageNumbers} onClick={this.handleClick} disabled>{pageNumbers}</button></li> : <li className="page-item"><button className="page-link" value={pageNumbers} onClick={this.handleClick}>{pageNumbers}</button></li> : null} 
-                            <li className="page-item">
-                            {this.state.currentPage !== this.state.finalPage ? <button name="next" onClick={this.handleClick}className="page-link" aria-label="Next">
+                
+                             {elements.map((value) => {
+                                return (<li key={value} className="page-item"><button className="page-link" value={value} onClick={this.handleClick}>{value}</button></li>)
+                            })}
+                            
+                            {this.state.currentPage !== this.state.finalPage ? <button id="nextPage" name="nextPage" onClick={this.handleClick}className="page-link" aria-label="Next">
                                 <span aria-hidden="true"><FontAwesomeIcon icon={faChevronRight} /></span>
-                            </button> : <button name="next" onClick={this.handleClick}className="btn disabled" aria-label="Next" disabled>
+                            </button> : <button name="nextPage" onClick={this.handleClick}className="btn disabled" aria-label="Next" disabled>
                                 <span aria-hidden="true"><FontAwesomeIcon icon={faChevronRight} /></span>
                             </button>}
-                            </li>
+                            
                         </ul>
                     </nav>
                 </div>
