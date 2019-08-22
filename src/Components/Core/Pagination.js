@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import TableHeader from './TableHeader'
-import Spinner from './Spinner'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons'
@@ -28,23 +27,26 @@ export default class Pagination extends Component {
       }
 
     handleClick = (event) => {
+
+        const {recordsPerPage, filteredData} = this.props;
         if (event.currentTarget.name === 'nextPage') {
             this.setState({
                 currentPage: this.state.currentPage+1,
-                paginatedData: this.props.filteredData.slice(this.state.currentPage*this.props.recordsPerPage,(this.state.currentPage*this.props.recordsPerPage)+this.props.recordsPerPage),
+                paginatedData: filteredData.slice(this.state.currentPage*recordsPerPage,(this.state.currentPage*recordsPerPage)+recordsPerPage),
             });
         } else if (event.currentTarget.name === 'previousPage') {
            
             this.setState({
                 currentPage: this.state.currentPage - 1,
-                paginatedData: this.props.filteredData.slice(this.state.currentPage-2/this.props.recordsPerPage,this.state.currentPage-1/this.props.recordsPerPage),
+                paginatedData: filteredData.slice((this.state.currentPage-2)*recordsPerPage,(this.state.currentPage-2)*recordsPerPage+recordsPerPage),
             });
         }
         else {
-            let page = parseInt(event.target.value)*this.props.recordsPerPage;
+            const page = parseInt(event.target.value);
+            const offset = (page*recordsPerPage)-recordsPerPage;
             this.setState({
                 currentPage: page,
-                paginatedData: this.props.filteredData.slice(page-1/this.props.recordsPerPage,page/this.props.recordsPerPage),
+                paginatedData: filteredData.slice(offset,offset+recordsPerPage),
             });
         }
     }
@@ -53,6 +55,7 @@ export default class Pagination extends Component {
     render() {
 
         let pages = [];
+        let pagebutton;
         for(let i = 1; i <= this.state.finalPage; i++) {
             pages.push(i);
         }
@@ -61,7 +64,7 @@ export default class Pagination extends Component {
                 <table className="table table-hover table-bordered">
                     <TableHeader fetching={this.props.fetching} tableHeaderOptions={this.props.tableHeaderOptions} paginatedData={this.state.paginatedData}/> 
                 </table>
-                {this.props.fetching ? <Spinner /> : null}          
+                       
                 <div> 
                     <nav aria-label="Page navigation example">
                         <ul className="pagination justify-content-center">
@@ -71,7 +74,8 @@ export default class Pagination extends Component {
                             </li>
                 
                              {pages.map((value) => {
-                                return (<li key={value} className="page-item"><button className="page-link" value={value} onClick={this.handleClick}>{value}</button></li>)
+                                value !== this.state.currentPage ? pagebutton = <li key={value} className="page-item"><button className="page-link" value={value} onClick={this.handleClick}>{value}</button></li> : pagebutton = <li key={value} className="page-item"><button className="btn disabled" value={value} onClick={this.handleClick} disabled><strong>{value}</strong></button></li>
+                                return (pagebutton)
                             })}
                             
                             {this.state.currentPage !== this.state.finalPage ? <button id="nextPage" name="nextPage" onClick={this.handleClick}className="page-link" aria-label="Next">

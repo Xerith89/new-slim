@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {filterByString} from '../Util/Filter'
 import Pagination from './Pagination';
+import Spinner from './Spinner'
 
 export default class FilterBar extends Component {
 
@@ -73,7 +74,7 @@ export default class FilterBar extends Component {
                          <button onClick={this.clearfilter} className="btn btn-primary ml-3">Clear Filter</button>
                        </div>
                  </div>
-                 <Pagination fetching={this.props.fetching} recordsPerPage={1} filteredData={this.state.filteredData} tableHeaderOptions={this.props.tableHeaderOptions}/>
+                 {this.props.fetching ? <Spinner /> : <Pagination recordsPerPage={3} filteredData={this.state.filteredData} tableHeaderOptions={this.props.tableHeaderOptions}/>}   
             </div>
         )
     }

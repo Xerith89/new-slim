@@ -24,7 +24,7 @@ export default class Tasks extends Component {
             {
                 id: 2,
                 name: 'Review New Invoice',
-                reference: '5500000',
+                reference: '5500002',
                 type: 'Claim', 
                 assigned: 'Alex Coupe',
                 priority: 'Normal',
@@ -33,7 +33,7 @@ export default class Tasks extends Component {
             {
                 id: 3,
                 name: 'Diary Review',
-                reference: '5500244',
+                reference: '5500003',
                 type: 'Specification', 
                 assigned: 'Donald Duck',
                 priority: 'Urgent',
@@ -42,7 +42,7 @@ export default class Tasks extends Component {
             {
                 id: 4,
                 name: 'Review New Claim',
-                reference: '5500008',
+                reference: '5500004',
                 type: 'Claim', 
                 assigned: 'Donald Duck',
                 priority: 'Normal',
@@ -51,7 +51,7 @@ export default class Tasks extends Component {
             {
                 id: 5,
                 name: 'Loss Adjustor Report Received',
-                reference: '5500044',
+                reference: '5500005',
                 type: 'Claim', 
                 assigned: 'Peter Parker',
                 priority: 'Urgent',
@@ -60,7 +60,7 @@ export default class Tasks extends Component {
             {
                 id: 6,
                 name: 'Invoice Received',
-                reference: '5500044',
+                reference: '5500006',
                 type: 'Claim', 
                 assigned: 'Peter Parker',
                 priority: 'Normal',
