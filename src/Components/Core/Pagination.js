@@ -32,28 +32,30 @@ export default class Pagination extends Component {
             this.setState({
                 currentPage: this.state.currentPage+1,
                 paginatedData: this.props.filteredData.slice(this.state.currentPage*this.props.recordsPerPage,(this.state.currentPage*this.props.recordsPerPage)+this.props.recordsPerPage),
-            })
+            });
         } else if (event.currentTarget.name === 'previousPage') {
            
             this.setState({
                 currentPage: this.state.currentPage - 1,
-                paginatedData: this.props.filteredData.slice(this.state.currentPage/this.props.recordsPerPage,(this.state.currentPage/this.props.recordsPerPage)+this.props.recordsPerPage),
-            })
+                paginatedData: this.props.filteredData.slice(this.state.currentPage-2/this.props.recordsPerPage,this.state.currentPage-1/this.props.recordsPerPage),
+            });
         }
         else {
             let page = parseInt(event.target.value)*this.props.recordsPerPage;
-            console.log(page);
+            this.setState({
+                currentPage: page,
+                paginatedData: this.props.filteredData.slice(page-1/this.props.recordsPerPage,page/this.props.recordsPerPage),
+            });
         }
     }
 
 
     render() {
 
-        let elements = [];
+        let pages = [];
         for(let i = 1; i <= this.state.finalPage; i++) {
-            elements.push(i);
+            pages.push(i);
         }
-        let pageNumbers = 1;
         return (
             <React.Fragment>
                 <table className="table table-hover table-bordered">
@@ -68,7 +70,7 @@ export default class Pagination extends Component {
                             <button name="previousPage" onClick={this.handleClick} className="page-link" href="/" aria-label="Previous"><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button>} 
                             </li>
                 
-                             {elements.map((value) => {
+                             {pages.map((value) => {
                                 return (<li key={value} className="page-item"><button className="page-link" value={value} onClick={this.handleClick}>{value}</button></li>)
                             })}
                             
