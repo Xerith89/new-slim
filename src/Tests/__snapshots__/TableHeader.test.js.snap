@@ -6,8 +6,8 @@ TableHeader {
   "doSort": [Function],
   "handleClick": [Function],
   "props": Object {
-    "fetchingTasks": false,
-    "taskList": Array [
+    "fetching": false,
+    "paginatedData": Array [
       Object {
         "assignedTo": "Alex Coupe",
         "claimSpecNo": "5500001",
@@ -45,17 +45,12 @@ TableHeader {
         "type": "Claim",
       },
     ],
+    "tableHeaderOptions": undefined,
   },
   "refs": Object {},
   "setState": [Function],
   "state": Object {
-    "nextSortAssignedTo": "Ascending",
-    "nextSortNumber": "Ascending",
-    "nextSortPriority": "Ascending",
-    "nextSortTaskName": "Ascending",
-    "nextSortType": "Ascending",
-    "nextsortDueDate": "Ascending",
-    "sortedTasks": Array [
+    "sortedData": Array [
       Object {
         "assignedTo": "Alex Coupe",
         "claimSpecNo": "5500001",
@@ -114,8 +109,8 @@ TableHeader {
         "useState": [Function],
       },
       "_element": <TableHeader
-        fetchingTasks={false}
-        taskList={
+        fetching={false}
+        paginatedData={
           Array [
             Object {
               "assignedTo": "Alex Coupe",
@@ -167,318 +162,11 @@ TableHeader {
         <thead
           data-testid="tableHeader"
         >
-          <tr>
-            <th
-              scope="col"
-            >
-              Name
-               
-              <button
-                data-placement="top"
-                data-toggle="tooltip"
-                id="id-0"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "background": "none",
-                    "border": "0",
-                    "padding": "0",
-                  }
-                }
-                title="Sort By Name"
-              >
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        320,
-                        512,
-                        Array [],
-                        "f0dc",
-                        "M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z",
-                      ],
-                      "iconName": "sort",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              </button>
-            </th>
-            <th
-              scope="col"
-            >
-              Spec/Claim No
-               
-              <button
-                data-placement="top"
-                data-toggle="tooltip"
-                id="id-1"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "background": "none",
-                    "border": "0",
-                    "padding": "0",
-                  }
-                }
-                title="Sort By Spec/Claim No"
-              >
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        320,
-                        512,
-                        Array [],
-                        "f0dc",
-                        "M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z",
-                      ],
-                      "iconName": "sort",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              </button>
-            </th>
-            <th
-              scope="col"
-            >
-              Type
-               
-              <button
-                data-placement="top"
-                data-toggle="tooltip"
-                id="id-2"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "background": "none",
-                    "border": "0",
-                    "padding": "0",
-                  }
-                }
-                title="Sort By Type"
-              >
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        320,
-                        512,
-                        Array [],
-                        "f0dc",
-                        "M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z",
-                      ],
-                      "iconName": "sort",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              </button>
-            </th>
-            <th
-              scope="col"
-            >
-              Assigned
-               
-              <button
-                data-placement="top"
-                data-toggle="tooltip"
-                id="id-3"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "background": "none",
-                    "border": "0",
-                    "padding": "0",
-                  }
-                }
-                title="Sort By Assigned"
-              >
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        320,
-                        512,
-                        Array [],
-                        "f0dc",
-                        "M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z",
-                      ],
-                      "iconName": "sort",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              </button>
-            </th>
-            <th
-              scope="col"
-            >
-              Priority
-               
-              <button
-                data-placement="top"
-                data-toggle="tooltip"
-                id="id-4"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "background": "none",
-                    "border": "0",
-                    "padding": "0",
-                  }
-                }
-                title="Sort By Priority"
-              >
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        320,
-                        512,
-                        Array [],
-                        "f0dc",
-                        "M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z",
-                      ],
-                      "iconName": "sort",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              </button>
-            </th>
-            <th
-              scope="col"
-            >
-              Due Date
-               
-              <button
-                data-placement="top"
-                data-toggle="tooltip"
-                id="id-5"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "background": "none",
-                    "border": "0",
-                    "padding": "0",
-                  }
-                }
-                title="Sort By Due Date"
-              >
-                <FontAwesomeIcon
-                  border={false}
-                  className=""
-                  fixedWidth={false}
-                  flip={null}
-                  icon={
-                    Object {
-                      "icon": Array [
-                        320,
-                        512,
-                        Array [],
-                        "f0dc",
-                        "M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z",
-                      ],
-                      "iconName": "sort",
-                      "prefix": "fas",
-                    }
-                  }
-                  inverse={false}
-                  listItem={false}
-                  mask={null}
-                  pull={null}
-                  pulse={false}
-                  rotation={null}
-                  size={null}
-                  spin={false}
-                  symbol={false}
-                  title=""
-                  transform={null}
-                />
-              </button>
-            </th>
-          </tr>
+          <tr />
         </thead>
         <tbody>
-          <DisplayTasks
-            taskList={
+          <DisplayTableData
+            finalData={
               Array [
                 Object {
                   "assignedTo": "Alex Coupe",

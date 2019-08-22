@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import FilterBar from './FilterBar'
-import {tasksFilterOptions} from '../Util/TasksConfig'
+import {tasksFilterOptions, tasksTableOptions} from '../Util/TasksConfig'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
-import {tasksTableOptions} from '../Util/TasksConfig'
 
 export default class Tasks extends Component {
 

@@ -3,6 +3,7 @@ import {render, cleanup} from '@testing-library/react';
 import FilterBar from './../Components/Core/FilterBar';
 import {shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import {tasksFilterOptions, tasksTableOptions} from '../Components/Util/TasksConfig'
 
 configure({adapter: new Adapter()});
 
@@ -48,13 +49,13 @@ const  taskList = [
 ]
 
 test('FilterBar Renders To The Dom', () => {
-    const {getByTestId} = render(<FilterBar taskList={taskList} fetchingTasks={false}/>);
+    const {getByTestId} = render(<FilterBar  fetching={false} data={taskList} filterOptions={tasksFilterOptions} tableHeaderOptions={tasksTableOptions} />);
     expect(getByTestId('filterBar')).toMatchSnapshot();
 });
 
 test('handleChange Called On Select Change', () => {
     const spy = jest.fn();
-    let wrapper = shallow(<FilterBar taskList={taskList} fetchingTasks={false}/>);
+    let wrapper = shallow(<FilterBar  fetching={false} data={taskList} filterOptions={tasksFilterOptions} tableHeaderOptions={tasksTableOptions} />);
     wrapper.instance().handleChange = spy;
     wrapper.instance().forceUpdate();
     expect(wrapper.instance().handleChange).not.toHaveBeenCalled();
@@ -73,7 +74,7 @@ test('handleChange Called On Select Change', () => {
 
 test('Single Filter Returns Excected Results', () => {
     
-    const wrapper = shallow(<FilterBar taskList={taskList} fetchingTasks={false}/>);
+    const wrapper = shallow(<FilterBar fetching={false} data={taskList} filterOptions={tasksFilterOptions} tableHeaderOptions={tasksTableOptions} />);
     const input = wrapper.find('#Type');
     input.simulate('change', {target: { name: 'Type', value: 'Claim'}});
     wrapper.update();
@@ -164,7 +165,7 @@ test('Single Filter Returns Excected Results', () => {
 });
 
 test('Two Filters Returns Excected Results', () => {
-    const wrapper = shallow(<FilterBar taskList={taskList} fetchingTasks={false}/>);
+    const wrapper = shallow(<FilterBar fetching={false} data={taskList} filterOptions={tasksFilterOptions} tableHeaderOptions={tasksTableOptions} />);
     const input = wrapper.find('#Priority');
     const inputTwo = wrapper.find('#Type');
     input.simulate('change', {target: { name: 'Priority', value: 'Urgent'}});
@@ -238,7 +239,7 @@ test('Two Filters Returns Excected Results', () => {
 });
 
 test('Three Filters Returns Excected Results', () => {
-    const wrapper = shallow(<FilterBar taskList={taskList} fetchingTasks={false}/>);
+    const wrapper = shallow(<FilterBar fetching={false} data={taskList} filterOptions={tasksFilterOptions} tableHeaderOptions={tasksTableOptions} />);
     const inputThree = wrapper.find('#Priority');
     const inputTwo = wrapper.find('#Assigned');
     const input = wrapper.find('#Type');

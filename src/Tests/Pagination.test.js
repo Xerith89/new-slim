@@ -48,12 +48,14 @@ const  taskList = [
 
 test('Clicking Next Page Calls Handle Change', () => {
     const spy = jest.fn();
-    let wrapper = shallow(<Pagination data={taskList} totalRecords={taskList.length} recordsPerPage={3} />);
-    wrapper.instance().handleChange = spy;
+    let wrapper = shallow(<Pagination filteredData={taskList} totalRecords={taskList.length} recordsPerPage={3} />);
+    wrapper.instance().handleClick = spy;
     wrapper.instance().forceUpdate();
-    expect(wrapper.instance().handleChange).not.toHaveBeenCalled();
-    wrapper.find('#nextPage').simulate('click');
-    expect(wrapper.instance().handleChange).toHaveBeenCalled();
-    expect(wrapper.instance().handleChange).toHaveBeenCalledTimes(1);
+    expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
+    wrapper.find('#nextPage').simulate('click',{currentTarget: {
+        name: 'nextPage'
+      }});
+    expect(wrapper.instance().handleClick).toHaveBeenCalled();
+    expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(1);
     wrapper.unmount();
 });

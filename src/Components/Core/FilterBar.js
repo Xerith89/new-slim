@@ -53,7 +53,6 @@ export default class FilterBar extends Component {
                 [event.target.name] : event.target.value
             });
         }
-        
     }
    
     render() {
@@ -74,14 +73,15 @@ export default class FilterBar extends Component {
                          <button onClick={this.clearfilter} className="btn btn-primary ml-3">Clear Filter</button>
                        </div>
                  </div>
-                 <Pagination fetching={this.props.fetching} recordsPerPage={6} filteredData={this.state.filteredData} tableHeaderOptions={this.props.tableHeaderOptions}/>
+                 <Pagination fetching={this.props.fetching} recordsPerPage={1} filteredData={this.state.filteredData} tableHeaderOptions={this.props.tableHeaderOptions}/>
             </div>
         )
     }
 }
 
 FilterBar.propTypes = {
-    options: PropTypes.arrayOf(Object),
+    filterOptions: PropTypes.array,
+    tableHeaderOptions: PropTypes.array,
     fetchingTasks: PropTypes.bool,
-    taskList: PropTypes.array
+    data: PropTypes.arrayOf(Object)
 }
