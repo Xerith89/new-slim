@@ -18,12 +18,15 @@ export default class Pagination extends Component {
 
     componentDidUpdate(prevProps) {
         if(prevProps.filteredData !== this.props.filteredData) {
-          this.setState({paginatedData: this.props.filteredData});
+          this.setState({
+            paginatedData: this.props.filteredData.slice(this.currentPage-1,this.props.recordsPerPage), 
+            totalRecords:this.props.filteredData.length,
+            finalPage: Math.ceil(this.props.filteredData.length/this.props.recordsPerPage)
+        });
         }
       }
 
     handleClick = (event) => {
-       
         if (event.currentTarget.name === 'next') {
             this.setState({
                 currentPage: this.state.currentPage+1,
@@ -58,7 +61,7 @@ export default class Pagination extends Component {
                             {this.state.currentPage === 1 ? <button name="previous" onClick={this.handleClick} className="btn disabled" aria-label="Previous" disabled><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button> :
                             <button name="previous" onClick={this.handleClick} className="page-link" href="/" aria-label="Previous"><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button>} 
                             </li>
-                            {this.state.finalPage > 1 ? <li className="page-item"><button className="page-link" value={pageNumbers} onClick={this.handleClick}>{pageNumbers}</button></li> : null} 
+                            {this.state.finalPage > 1 ? this.state.currentPage === pageNumbers ? <li className="page-item"><button className="btn disabled" value={pageNumbers} onClick={this.handleClick} disabled>{pageNumbers}</button></li> : <li className="page-item"><button className="page-link" value={pageNumbers} onClick={this.handleClick}>{pageNumbers}</button></li> : null} 
                             <li className="page-item">
                             {this.state.currentPage !== this.state.finalPage ? <button name="next" onClick={this.handleClick}className="page-link" aria-label="Next">
                                 <span aria-hidden="true"><FontAwesomeIcon icon={faChevronRight} /></span>
