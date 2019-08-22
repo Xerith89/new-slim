@@ -38,7 +38,7 @@ export default class Pagination extends Component {
             const offset = (this.state.currentPage-2)*recordsPerPage
             this.setState({
                 currentPage: this.state.currentPage - 1,
-                paginatedData: filteredData.slice(offset,offset*recordsPerPage+recordsPerPage),
+                paginatedData: filteredData.slice(offset,offset+recordsPerPage),
             });
         }
         else {
@@ -70,15 +70,15 @@ export default class Pagination extends Component {
                         <ul className="pagination justify-content-center">
                             <li className="page-item">
                             {this.state.currentPage === 1 ? <button id="previousPage" name="previousPage" onClick={this.handleClick} className="btn disabled" aria-label="Previous" disabled><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button> :
-                            <button name="previousPage" onClick={this.handleClick} className="page-link" href="/" aria-label="Previous"><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button>} 
+                            <button name="previousPage" onClick={this.handleClick} style={{border: '0', background: 'none'}} className="page-link" href="/" aria-label="Previous"><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button>} 
                             </li>
                 
                              {pages.map((value) => {
-                                value !== this.state.currentPage ? pagebutton = <li key={value} className="page-item"><button className="page-link" value={value} onClick={this.handleClick}>{value}</button></li> : pagebutton = <li key={value} className="page-item"><button className="btn disabled" value={value} onClick={this.handleClick} disabled><strong>{value}</strong></button></li>
+                                value !== this.state.currentPage ? pagebutton = <li key={value} className="page-item"><button style={{border: '0', background: 'none'}} className="page-link" value={value} onClick={this.handleClick}>{value}</button></li> : pagebutton = <li key={value} className="page-item"><button className="btn disabled" value={value} onClick={this.handleClick} disabled><strong>{value}</strong></button></li>
                                 return (pagebutton)
                             })}
                             
-                            {this.state.currentPage !== this.state.finalPage ? <button id="nextPage" name="nextPage" onClick={this.handleClick}className="page-link" aria-label="Next">
+                            {this.state.currentPage !== this.state.finalPage ? <button id="nextPage"style={{border: '0',  background: 'none'}}  name="nextPage" onClick={this.handleClick}className="page-link" aria-label="Next">
                                 <span aria-hidden="true"><FontAwesomeIcon icon={faChevronRight} /></span>
                             </button> : <button name="nextPage" onClick={this.handleClick}className="btn disabled" aria-label="Next" disabled>
                                 <span aria-hidden="true"><FontAwesomeIcon icon={faChevronRight} /></span>
