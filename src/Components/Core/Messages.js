@@ -60,8 +60,8 @@ export default class Messages extends Component {
                     <div id="overview" className="card" style={{width: 'auto'}}>
                     <h2 className="card-header text-center" style={{backgroundColor: "#ebf2fc"}}><FontAwesomeIcon icon={faEnvelope}/> 
                          Messages <span className="badge badge-dark">{this.state.messageList.length}</span></h2>
-                        <div className="card-body">
-                            <FilterBar fetching={this.state.fetchingMessages} recordsPerPage={1} withFilter={false} filterOptions={messagesFilterOptions} tableHeaderOptions={messagesTableOptions} data={this.state.messageList} />
+                        <div className="card-body" style={{backgroundColor: "#fff6db"}}>
+                            <FilterBar fetching={this.state.fetchingMessages} recordsPerPage={2} withFilter={true} filterOptions={messagesFilterOptions} tableHeaderOptions={messagesTableOptions} data={this.state.messageList} />
                         </div>
                     </div> 
                 </div>

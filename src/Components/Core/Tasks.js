@@ -101,8 +101,8 @@ export default class Tasks extends Component {
                     <div id="overview" className="card" style={{width: 'auto'}}>
                         <h2 className="card-header text-center" style={{backgroundColor: "#ebf2fc"}}><FontAwesomeIcon icon={faEdit}/> 
                          Tasks <span className="badge badge-dark">{this.state.taskList.length}</span></h2>
-                        <div className="card-body bg-white">
-                            <FilterBar fetching={this.state.fetchingTasks} recordsPerPage={3} withFilter={true} data={this.state.taskList} filterOptions={tasksFilterOptions} tableHeaderOptions={tasksTableOptions} />
+                        <div className="card-body" style={{backgroundColor: "#fff6db"}}>
+                            <FilterBar fetching={this.state.fetchingTasks} recordsPerPage={2} withFilter={true} data={this.state.taskList} filterOptions={tasksFilterOptions} tableHeaderOptions={tasksTableOptions} />
                         </div>
                     </div> 
                 </div>

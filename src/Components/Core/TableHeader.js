@@ -71,9 +71,7 @@ export default class TableHeader extends Component {
                     })}
                 </tr>
             </thead>
-            <tbody>
-               <DisplayTableData finalData={this.state.sortedData}/> 
-            </tbody>   
+               <DisplayTableData finalData={this.state.sortedData}/>  
             </React.Fragment>
         )
     }
