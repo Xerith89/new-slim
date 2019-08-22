@@ -1,27 +1,55 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
-export default function DisplayTableData(props) {
-    return (
-       <React.Fragment>
-        {props.finalData && props.finalData.map((task) => {
-            return (
-            <tr key={task.id}>
-                <td><a href={"/"+task.type/task.id} style={{display: 'block'}}>{task.name}</a></td>
-                <td><a href={"/"+task.type/task.id} style={{display: 'block'}}>{task.reference}</a></td>
-                <td><a href={"/"+task.type+"/"+task.id} style={{display: 'block'}}>{task.type}</a></td>
-                <td><a href={"/"+task.type/task.id} style={{display: 'block'}}>{task.assigned}</a></td>
-                <td><a href={"/"+task.type/task.id} style={{display: 'block'}}>{task.priority}</a></td>
-                <td><a href={"/"+task.type/task.id} style={{display: 'block'}}>{task.due}</a></td>
-            </tr>
-           )
-        })}
-    </React.Fragment>     
-    )
+export default class DisplayTableData extends Component {
+
+    constructor(props) {
+        super(props)
+
+        if (this.props.finalData) {
+            this.state = {
+                data: this.refreshData()
+            }  
+        }
+    }
+
+    refreshData = () => {
+        const output = this.props.finalData.map(function(obj) {
+            return Object.keys(obj).map(function(key) { 
+              return obj[key];
+            });
+        }); 
+        return output;
+    }
+
+    componentDidUpdate(prevProps) {
+        if(prevProps.finalData !== this.props.finalData) {
+            this.setState({data: this.refreshData()})
+        }
+      }
+
+    render() {
+        const {data} = this.state;
+        let items = [];
+        let id = 0;
+        return (
+            <tbody>
+                {data.map(element => {
+                    items = [];
+                    for (let i = 1; i < element.length; i++)
+                    {
+                        items.push(<td key={id}>{element[i]}</td>);
+                        id++;
+                    }
+                    return (<tr key={id}>{items}</tr>)
+                })}
+            </tbody>   
+        )
+    }
 }
 
 DisplayTableData.propTypes = {
-    taskList: PropTypes.arrayOf(Object)
+    finalData: PropTypes.arrayOf(Object)
 }
 
 
