@@ -16,6 +16,12 @@ export default class Pagination extends Component {
         }
     }
 
+    componentDidUpdate(prevProps) {
+        if(prevProps.filteredData !== this.props.filteredData) {
+          this.setState({paginatedData: this.props.filteredData});
+        }
+      }
+
     handleClick = (event) => {
        
         if (event.currentTarget.name === 'next') {
@@ -52,7 +58,7 @@ export default class Pagination extends Component {
                             {this.state.currentPage === 1 ? <button name="previous" onClick={this.handleClick} className="btn disabled" aria-label="Previous" disabled><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button> :
                             <button name="previous" onClick={this.handleClick} className="page-link" href="/" aria-label="Previous"><span aria-hidden="true"><FontAwesomeIcon icon={faChevronLeft} /></span></button>} 
                             </li>
-                             <li className="page-item"><button className="page-link" value={pageNumbers} onClick={this.handleClick}>{pageNumbers}</button></li>
+                            {this.state.finalPage > 1 ? <li className="page-item"><button className="page-link" value={pageNumbers} onClick={this.handleClick}>{pageNumbers}</button></li> : null} 
                             <li className="page-item">
                             {this.state.currentPage !== this.state.finalPage ? <button name="next" onClick={this.handleClick}className="page-link" aria-label="Next">
                                 <span aria-hidden="true"><FontAwesomeIcon icon={faChevronRight} /></span>

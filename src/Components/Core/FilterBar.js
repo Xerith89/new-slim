@@ -8,71 +8,30 @@ export default class FilterBar extends Component {
     constructor(props){
         super(props)
 
-        this.state = {
+        this.state = this.getInitialState();
+    }
+
+    getInitialState = () => {
+        const initialState = {
             filteredData:  this.props.data,
         }
+        this.props.filterOptions.forEach((e) => {
+            initialState[e.header] = ''
+        })
+        
+        return initialState;
     }
 
     clearfilter = () => {
-        this.setState({
-            filteredData: this.props.data,
-        })
+        this.setState(this.getInitialState());
     }
 
     handleChange = (event) => {
-
-        //TODO Can we clean this up?
-        
-        if (event.target.value === '') {
-
-            //Check for any other filters
-            let refiltered = this.props.data;
-            if (event.target.name !== 'Type') {
-                refiltered = filterByString(refiltered,"type",this.state.Type);
-            }
-            if (event.target.name !== 'Assigned') {
-                refiltered = filterByString(refiltered,"assigned",this.state.Assigned);
-            }
-            if (event.target.name !== 'Priority') {
-                refiltered = filterByString(refiltered,"priority",this.state.Priority);
-            }
-            this.setState({
-                filteredData: refiltered,
-                [event.target.name] : event.target.value  
-            })
-        }
-        else if (event.target.value !== '' && this.state[event.target.name] !== '') {
-            
-            let refiltered = this.props.taskList;
-           
-            if (this.state.Type !== '' && event.target.name !== 'Type') {
-                refiltered = filterByString(refiltered,"type",this.state.Type);
-            } else if(event.target.name === 'Type') {
-                refiltered = filterByString(refiltered,"type",event.target.value);
-            }
-
-            if (this.state.Assigned !== '' && event.target.name !== 'Assigned') {
-                refiltered = filterByString(refiltered,"assigned",this.state.Assigned);
-            } else if(event.target.name === 'Assigned'){
-                refiltered = filterByString(refiltered,"assigned",event.target.value);
-            }
-           
-            if (this.state.Priority !== '' && event.target.name !== 'Priority') {
-                refiltered = filterByString(refiltered,"priority",this.state.Priority);
-            } else if(event.target.name === 'Priority') {
-                refiltered = filterByString(refiltered,"priority",event.target.value);
-            }
-            this.setState({
-                filteredData: refiltered,
-                [event.target.name] : event.target.value
-            })
-        } else {
-            this.setState({
-                filteredData: filterByString(this.state.filteredData, [event.target.name.toLowerCase()], event.target.value),
-                [event.target.name] : event.target.value
-            });
-        }
-      };
+        this.setState({
+            [event.target.name]: event.target.value,
+            filteredData: filterByString(this.props.data,event.target.name.toLowerCase(),event.target.value)
+        })
+    }
    
     render() {
         return (
@@ -92,7 +51,7 @@ export default class FilterBar extends Component {
                          <button onClick={this.clearfilter} className="btn btn-primary ml-3">Clear Filter</button>
                        </div>
                  </div>
-                 <Pagination fetching={this.props.fetching} recordsPerPage={1} filteredData={this.state.filteredData} tableHeaderOptions={this.props.tableHeaderOptions}/>
+                 <Pagination fetching={this.props.fetching} recordsPerPage={6} filteredData={this.state.filteredData} tableHeaderOptions={this.props.tableHeaderOptions}/>
             </div>
         )
     }
