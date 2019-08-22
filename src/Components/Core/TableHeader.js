@@ -80,6 +80,5 @@ export default class TableHeader extends Component {
 }
 
 TableHeader.propTypes = {
-    fetchingTasks: PropTypes.bool,
-    taskList: PropTypes.array
+    paginatedData: PropTypes.array
 }

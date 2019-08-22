@@ -61,7 +61,7 @@ export default class Messages extends Component {
                     <h2 className="card-header text-center" style={{backgroundColor: "#ebf2fc"}}><FontAwesomeIcon icon={faEnvelope}/> 
                          Messages <span className="badge badge-dark">{this.state.messageList.length}</span></h2>
                         <div className="card-body">
-                            <FilterBar fetching={this.state.fetchingMessages} filterOptions={messagesFilterOptions} tableHeaderOptions={messagesTableOptions} data={this.state.messageList} />
+                            <FilterBar fetching={this.state.fetchingMessages} recordsPerPage={1} withFilter={false} filterOptions={messagesFilterOptions} tableHeaderOptions={messagesTableOptions} data={this.state.messageList} />
                         </div>
                     </div> 
                 </div>

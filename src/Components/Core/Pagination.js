@@ -35,10 +35,10 @@ export default class Pagination extends Component {
                 paginatedData: filteredData.slice(this.state.currentPage*recordsPerPage,(this.state.currentPage*recordsPerPage)+recordsPerPage),
             });
         } else if (event.currentTarget.name === 'previousPage') {
-           
+            const offset = (this.state.currentPage-2)*recordsPerPage
             this.setState({
                 currentPage: this.state.currentPage - 1,
-                paginatedData: filteredData.slice((this.state.currentPage-2)*recordsPerPage,(this.state.currentPage-2)*recordsPerPage+recordsPerPage),
+                paginatedData: filteredData.slice(offset,offset*recordsPerPage+recordsPerPage),
             });
         }
         else {
@@ -95,6 +95,5 @@ export default class Pagination extends Component {
 Pagination.propTypes = {
     fetchingTasks: PropTypes.bool,
     filteredData: PropTypes.array,
-    totalRecords: PropTypes.number,
     recordsPerPage: PropTypes.number
 }
