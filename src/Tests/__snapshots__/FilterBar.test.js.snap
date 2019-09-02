@@ -1,100 +1,298 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FilterBar Renders To The Dom 1`] = `
-<div
-  class="card m-4"
-  data-testid="filterBar"
-  id="overview"
-  style="width: auto;"
->
-  <div
-    class="form-group m-2"
-  >
-    <label
-      class="mr-1 ml-2 mt-3 mb-2"
-    >
-      Type
-      :
-    </label>
-    <select
-      class="form-control-sm col-sm-2 mr-2"
-      id="Type"
-      name="Type"
-    >
-      <option
-        value=""
-      />
-      <option
-        value="Claim"
-      >
-        Claim
-      </option>
-      <option
-        value="Specification"
-      >
-        Specification
-      </option>
-    </select>
-    <label
-      class="mr-1 ml-2 mt-3 mb-2"
-    >
-      Assigned
-      :
-    </label>
-    <select
-      class="form-control-sm col-sm-2 mr-2"
-      id="Assigned"
-      name="Assigned"
-    >
-      <option
-        value=""
-      />
-      <option
-        value="Alex Coupe"
-      >
-        Alex Coupe
-      </option>
-      <option
-        value="Donald Duck"
-      >
-        Donald Duck
-      </option>
-      <option
-        value="Peter Parker"
-      >
-        Peter Parker
-      </option>
-    </select>
-    <label
-      class="mr-1 ml-2 mt-3 mb-2"
-    >
-      Priority
-      :
-    </label>
-    <select
-      class="form-control-sm col-sm-2 mr-2"
-      id="Priority"
-      name="Priority"
-    >
-      <option
-        value=""
-      />
-      <option
-        value="Normal"
-      >
-        Normal
-      </option>
-      <option
-        value="Urgent"
-      >
-        Urgent
-      </option>
-    </select>
-    <button
-      class="btn btn-primary ml-3"
-    >
-      Clear Filter
-    </button>
-  </div>
-</div>
+FilterBar {
+  "clearfilter": [Function],
+  "context": Object {},
+  "getInitialState": [Function],
+  "handleChange": [Function],
+  "props": Object {
+    "data": Array [
+      Object {
+        "assigned": "Alex Coupe",
+        "claimSpecNo": "5500001",
+        "dueDate": "01-09-2019",
+        "id": 1,
+        "priority": "Normal",
+        "taskName": "Review New Claim",
+        "type": "Claim",
+      },
+      Object {
+        "assigned": "Alex Coupe",
+        "claimSpecNo": "5500000",
+        "dueDate": "01-09-2019",
+        "id": 2,
+        "name": "Review New Invoice",
+        "priority": "Normal",
+        "type": "Claim",
+      },
+      Object {
+        "assigned": "Donald Duck",
+        "claimSpecNo": "5500244",
+        "dueDate": "29-09-2019",
+        "id": 3,
+        "name": "Diary Review",
+        "priority": "Urgent",
+        "type": "Specification",
+      },
+      Object {
+        "assigned": "Peter Parker",
+        "claimSpecNo": "5500044",
+        "dueDate": "05-09-2019",
+        "id": 4,
+        "name": "Loss Adjustor Report Received",
+        "priority": "Urgent",
+        "type": "Claim",
+      },
+    ],
+    "fetching": false,
+    "filterOptions": Array [
+      Object {
+        "body": Array [
+          "",
+          "Claim",
+          "Specification",
+        ],
+        "header": "Type",
+      },
+      Object {
+        "body": Array [
+          "",
+          "Alex Coupe",
+          "Donald Duck",
+          "Peter Parker",
+        ],
+        "header": "Assigned",
+      },
+      Object {
+        "body": Array [
+          "",
+          "Normal",
+          "Urgent",
+        ],
+        "header": "Priority",
+      },
+    ],
+    "tableHeaderOptions": Array [
+      "Name",
+      "Reference",
+      "Type",
+      "Assigned",
+      "Priority",
+      "Due",
+    ],
+  },
+  "refs": Object {},
+  "setState": [Function],
+  "state": Object {
+    "Assigned": "",
+    "Priority": "",
+    "Type": "",
+    "filteredData": Array [
+      Object {
+        "assigned": "Alex Coupe",
+        "claimSpecNo": "5500001",
+        "dueDate": "01-09-2019",
+        "id": 1,
+        "priority": "Normal",
+        "taskName": "Review New Claim",
+        "type": "Claim",
+      },
+      Object {
+        "assigned": "Alex Coupe",
+        "claimSpecNo": "5500000",
+        "dueDate": "01-09-2019",
+        "id": 2,
+        "name": "Review New Invoice",
+        "priority": "Normal",
+        "type": "Claim",
+      },
+      Object {
+        "assigned": "Donald Duck",
+        "claimSpecNo": "5500244",
+        "dueDate": "29-09-2019",
+        "id": 3,
+        "name": "Diary Review",
+        "priority": "Urgent",
+        "type": "Specification",
+      },
+      Object {
+        "assigned": "Peter Parker",
+        "claimSpecNo": "5500044",
+        "dueDate": "05-09-2019",
+        "id": 4,
+        "name": "Loss Adjustor Report Received",
+        "priority": "Urgent",
+        "type": "Claim",
+      },
+    ],
+  },
+  "updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": ReactShallowRenderer {
+      "_context": Object {},
+      "_didScheduleRenderPhaseUpdate": false,
+      "_dispatcher": Object {
+        "readContext": [Function],
+        "useCallback": [Function],
+        "useContext": [Function],
+        "useDebugValue": [Function],
+        "useEffect": [Function],
+        "useImperativeHandle": [Function],
+        "useLayoutEffect": [Function],
+        "useMemo": [Function],
+        "useReducer": [Function],
+        "useRef": [Function],
+        "useResponder": [Function],
+        "useState": [Function],
+      },
+      "_element": <FilterBar
+        data={
+          Array [
+            Object {
+              "assigned": "Alex Coupe",
+              "claimSpecNo": "5500001",
+              "dueDate": "01-09-2019",
+              "id": 1,
+              "priority": "Normal",
+              "taskName": "Review New Claim",
+              "type": "Claim",
+            },
+            Object {
+              "assigned": "Alex Coupe",
+              "claimSpecNo": "5500000",
+              "dueDate": "01-09-2019",
+              "id": 2,
+              "name": "Review New Invoice",
+              "priority": "Normal",
+              "type": "Claim",
+            },
+            Object {
+              "assigned": "Donald Duck",
+              "claimSpecNo": "5500244",
+              "dueDate": "29-09-2019",
+              "id": 3,
+              "name": "Diary Review",
+              "priority": "Urgent",
+              "type": "Specification",
+            },
+            Object {
+              "assigned": "Peter Parker",
+              "claimSpecNo": "5500044",
+              "dueDate": "05-09-2019",
+              "id": 4,
+              "name": "Loss Adjustor Report Received",
+              "priority": "Urgent",
+              "type": "Claim",
+            },
+          ]
+        }
+        fetching={false}
+        filterOptions={
+          Array [
+            Object {
+              "body": Array [
+                "",
+                "Claim",
+                "Specification",
+              ],
+              "header": "Type",
+            },
+            Object {
+              "body": Array [
+                "",
+                "Alex Coupe",
+                "Donald Duck",
+                "Peter Parker",
+              ],
+              "header": "Assigned",
+            },
+            Object {
+              "body": Array [
+                "",
+                "Normal",
+                "Urgent",
+              ],
+              "header": "Priority",
+            },
+          ]
+        }
+        tableHeaderOptions={
+          Array [
+            "Name",
+            "Reference",
+            "Type",
+            "Assigned",
+            "Priority",
+            "Due",
+          ]
+        }
+      />,
+      "_firstWorkInProgressHook": null,
+      "_forcedUpdate": false,
+      "_instance": [Circular],
+      "_isReRender": false,
+      "_newState": null,
+      "_numberOfReRenders": 0,
+      "_renderPhaseUpdates": null,
+      "_rendered": <div>
+        <Pagination
+          filteredData={
+            Array [
+              Object {
+                "assigned": "Alex Coupe",
+                "claimSpecNo": "5500001",
+                "dueDate": "01-09-2019",
+                "id": 1,
+                "priority": "Normal",
+                "taskName": "Review New Claim",
+                "type": "Claim",
+              },
+              Object {
+                "assigned": "Alex Coupe",
+                "claimSpecNo": "5500000",
+                "dueDate": "01-09-2019",
+                "id": 2,
+                "name": "Review New Invoice",
+                "priority": "Normal",
+                "type": "Claim",
+              },
+              Object {
+                "assigned": "Donald Duck",
+                "claimSpecNo": "5500244",
+                "dueDate": "29-09-2019",
+                "id": 3,
+                "name": "Diary Review",
+                "priority": "Urgent",
+                "type": "Specification",
+              },
+              Object {
+                "assigned": "Peter Parker",
+                "claimSpecNo": "5500044",
+                "dueDate": "05-09-2019",
+                "id": 4,
+                "name": "Loss Adjustor Report Received",
+                "priority": "Urgent",
+                "type": "Claim",
+              },
+            ]
+          }
+          tableHeaderOptions={
+            Array [
+              "Name",
+              "Reference",
+              "Type",
+              "Assigned",
+              "Priority",
+              "Due",
+            ]
+          }
+        />
+      </div>,
+      "_rendering": false,
+      "_updater": [Circular],
+      "_workInProgressHook": null,
+    },
+  },
+}
 `;
