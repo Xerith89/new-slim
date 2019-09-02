@@ -21,6 +21,7 @@ export default class Pagination extends Component {
           this.setState({
             paginatedData: this.props.filteredData.slice(this.currentPage-1,this.props.recordsPerPage), 
             totalRecords:this.props.filteredData.length,
+            currentPage: 1,
             finalPage: Math.ceil(this.props.filteredData.length/this.props.recordsPerPage)
         });
         }
@@ -74,7 +75,7 @@ export default class Pagination extends Component {
                             </li>
                 
                              {pages.map((value) => {
-                                value !== this.state.currentPage ? pagebutton = <li key={value} className="page-item"><button style={{border: '0', background: 'none'}} className="page-link" value={value} onClick={this.handleClick}>{value}</button></li> : pagebutton = <li key={value} className="page-item"><button className="btn disabled" value={value} onClick={this.handleClick} disabled><strong>{value}</strong></button></li>
+                                value !== this.state.currentPage ? pagebutton = <li key={value} className="page-item"><button name={`value${value}`} style={{border: '0', background: 'none'}} className="page-link" value={value} onClick={this.handleClick}>{value}</button></li> : pagebutton = <li key={value} className="page-item"><button className="btn disabled" value={value} onClick={this.handleClick} disabled><strong>{value}</strong></button></li>
                                 return (pagebutton)
                             })}
                             
