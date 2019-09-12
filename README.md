@@ -1,5 +1,7 @@
 ## Simple React UI
 
+[![CircleCI](https://circleci.com/gh/Xerith89/simple-react-ui.svg?style=svg)](https://circleci.com/gh/Xerith89/simple-react-ui)
+
 ## What Is It?
 
 Simple React UI is a collection of reusable components designed to make it easy to get started with building UIs in ReactJS
