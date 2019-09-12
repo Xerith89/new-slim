@@ -14,7 +14,7 @@ The majority of the components are kept in the core module. Simply clone the rep
 
 ##### Button
 Part of Core module
-`[props:- text :string (required), className :string, onClick :function, style :object]`
+`[props:- text :string (required), className :string, onClick :function, style :object, name :string]`
 
 #### Pagination
 Part of Pagination module
