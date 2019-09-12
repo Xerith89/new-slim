@@ -1,12 +1,11 @@
 import React from 'react';
-import Dashboard from './Components/Meta/Dashboard'
-import TopBar from './Components/Core/TopBar/TopBar'
+import {Spinner, Button} from './Components/Core'
 
 function App() {
     return ( 
     <div className = "App">
-        <TopBar user="Alex"/>
-        <Dashboard />
+        <Spinner style={{color: 'red'}} />
+        <Button className="btn btn-primary ml-5" onClick={() => alert("example")} text='Test' />
     </div>
     );
 }

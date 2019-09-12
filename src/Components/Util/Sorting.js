@@ -29,7 +29,14 @@ function sortDescending(inputObjectArray, sortProperty) {
     });
 }
 
+const sortType = {
+    DEFAULT: 'Default',
+    ASCENDING: 'Ascending',
+    DESECENDING: 'Descending'
+}
+
 module.exports = {
     sortAscending:sortAscending,
-    sortDescending:sortDescending
+    sortDescending:sortDescending,
+    sortType: sortType
 }

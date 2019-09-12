@@ -1,11 +1,11 @@
-import React from 'react';
-import Spinner from '../Components/Core/Spinner'
-import {render, cleanup} from '@testing-library/react';
+import {Spinner} from '../Components/Core'
+import React from 'react'
+import {shallow, configure,} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-
-afterEach(cleanup)
+configure({adapter: new Adapter()});
 
 test('Spinner component renders to the DOM', () => {
-    const {getByTestId} = render(<Spinner />);
-    expect(getByTestId('spinner')).toMatchSnapshot();
+    let wrapper = shallow(<Spinner />);
+    expect(wrapper.html()).toMatchSnapshot();
 });

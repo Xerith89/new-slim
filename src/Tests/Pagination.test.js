@@ -1,87 +1,154 @@
-import React from 'react';
-
-import Pagination from './../Components/Core/Pagination';
-import {shallow, configure } from 'enzyme';
+import Pagination from '../Components/Pagination'
+import React from 'react'
+import {shallow, configure,} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({adapter: new Adapter()});
 
-const  taskList = [
+const paginatedData = [
     {
-        id: 1,
-        taskName: 'Review New Claim',
-        claimSpecNo: '5500001',
-        type: 'Claim', 
-        assignedTo: 'Alex Coupe',
-        priority: 'Normal',
-        dueDate: '01-09-2019'
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
     },
     {
-        id: 2,
-        taskName: 'Review New Invoice',
-        claimSpecNo: '5500000',
-        type: 'Claim', 
-        assignedTo: 'Alex Coupe',
-        priority: 'Normal',
-        dueDate: '01-09-2019'
+    "userId": 1,
+    "id": 2,
+    "title": "qui est esse",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
     },
     {
-        id: 3,
-        taskName: 'Diary Review',
-        claimSpecNo: '5500244',
-        type: 'Claim', 
-        assignedTo: 'Donald Duck',
-        priority: 'Urgent',
-        dueDate: '29-09-2019'
-    },
-    {
-        id: 4,
-        taskName: 'Loss Adjustor Report Received',
-        claimSpecNo: '5500044',
-        type: 'Claim', 
-        assignedTo: 'Peter Parker',
-        priority: 'Urgent',
-        dueDate: '05-09-2019'
+    "userId": 1,
+    "id": 3,
+    "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+    "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
     },
 ]
-test('Pagination Renders to the DOM', () => {
-    let wrapper = shallow(<Pagination filteredData={taskList} totalRecords={taskList.length} recordsPerPage={3} />);
-    expect(wrapper.instance()).toMatchSnapshot();  
+
+const mock = function Hello(props) {
+    return (
+        <div> 
+            <ul>
+            {props.paginatedData && props.paginatedData.map((item) => {
+                return (
+                    <li key={item.id}>{item.title}</li> 
+                )
+            })}
+            </ul>
+        </div>
+    )
+}
+
+describe('Pagination Buttons Behave As Expected', () => {
+
+    test('Handle click is fired on nextPage click', () => {
+        let wrapper = shallow(<Pagination  data={paginatedData} totalRecords={3} recordsPerPage={1} range={1}>{mock}</Pagination>);
+        wrapper.instance().handleClick = jest.fn();
+        wrapper.instance().forceUpdate();
+        expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
+        wrapper.find({name: 'nextPage'}).simulate('click');
+        expect(wrapper.instance().handleClick).toHaveBeenCalled();
+        wrapper.find({name: 'nextPage'}).simulate('click');
+        expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(2);
+        wrapper.unmount();
+    });
+
+    test('Handle click is fired on firstPage click', () => {
+        let wrapper = shallow(<Pagination  data={paginatedData} totalRecords={3}  recordsPerPage={1} range={1}>{mock}</Pagination>);
+        wrapper.instance().handleClick = jest.fn();
+        wrapper.instance().forceUpdate();
+        expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
+        wrapper.find({name: 'firstPage'}).simulate('click');
+        expect(wrapper.instance().handleClick).toHaveBeenCalled();
+        wrapper.find({name: 'firstPage'}).simulate('click');
+        expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(2);
+        wrapper.unmount();
+    });
+
+    test('Handle click is fired on previousPage click', () => {
+        let wrapper = shallow(<Pagination  data={paginatedData} totalRecords={3}  recordsPerPage={1} range={1}>{mock}</Pagination>);
+        wrapper.instance().handleClick = jest.fn();
+        wrapper.instance().forceUpdate();
+        expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
+        wrapper.find({name: 'previousPage'}).simulate('click');
+        expect(wrapper.instance().handleClick).toHaveBeenCalled();
+        wrapper.find({name: 'previousPage'}).simulate('click');
+        expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(2);
+        wrapper.unmount();
+    });
+
+    test('Handle click is fired on lastPage click', () => {
+        let wrapper = shallow(<Pagination  data={paginatedData} totalRecords={3}  recordsPerPage={1} range={1}>{mock}</Pagination>);
+        wrapper.setState({ lastPage: 3 });
+        wrapper.instance().handleClick = jest.fn();
+        wrapper.instance().forceUpdate();
+        expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
+        wrapper.find({name: 'lastPage'}).simulate('click');
+        expect(wrapper.instance().handleClick).toHaveBeenCalled();
+        wrapper.find({name: 'lastPage'}).simulate('click');
+        expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(2);
+        wrapper.unmount();
+    });
+
+    test('nextPage click increases page', () => {
+        let wrapper = shallow(<Pagination  data={paginatedData} totalRecords={3}  recordsPerPage={1} range={1}>{mock}</Pagination>);
+        wrapper.setState({ lastPage: 3 });
+        expect(wrapper.state('currentPage')).toBe(1);
+        wrapper.find({name: 'nextPage'}).simulate('click', {currentTarget: { name: 'nextPage'}});
+        expect(wrapper.state('currentPage')).toBe(2);
+        wrapper.find({name: 'nextPage'}).simulate('click', {currentTarget: { name: 'nextPage'}});
+        expect(wrapper.state('currentPage')).toBe(3);
+        wrapper.find({name: 'nextPage'}).simulate('click', {currentTarget: { name: 'nextPage'}});
+        expect(wrapper.state('currentPage')).toBe(3);
+        wrapper.unmount();
+    });
+
+    test('previousPage click decreases page', () => {
+        let wrapper = shallow(<Pagination  data={paginatedData} totalRecords={3}  recordsPerPage={1} range={1}>{mock}</Pagination>);
+        wrapper.setState({ currentPage: 3 });
+        expect(wrapper.state('currentPage')).toBe(3);
+        wrapper.find({name: 'previousPage'}).simulate('click', {currentTarget: { name: 'previousPage'}});
+        expect(wrapper.state('currentPage')).toBe(2);
+        wrapper.find({name: 'previousPage'}).simulate('click', {currentTarget: { name: 'previousPage'}});
+        expect(wrapper.state('currentPage')).toBe(1);
+        wrapper.find({name: 'previousPage'}).simulate('click', {currentTarget: { name: 'previousPage'}});
+        expect(wrapper.state('currentPage')).toBe(1);
+        wrapper.unmount();
+    });
+
+    test('firstPage click takes you to first page', () => {
+        let wrapper = shallow(<Pagination  data={paginatedData} totalRecords={3} recordsPerPage={1} range={1}>{mock}</Pagination>);
+        wrapper.setState({ currentPage: 3 });
+        expect(wrapper.state('currentPage')).toBe(3);
+        wrapper.find({name: 'firstPage'}).simulate('click', {currentTarget: { name: 'firstPage'}});
+        expect(wrapper.state('currentPage')).toBe(1);
+        wrapper.find({name: 'firstPage'}).simulate('click', {currentTarget: { name: 'firstPage'}});
+        expect(wrapper.state('currentPage')).toBe(1);       
+        wrapper.unmount();
+    });
+
+    test('lastPage click takes you to last page', () => {
+        let wrapper = shallow(<Pagination  data={paginatedData} totalRecords={3}  recordsPerPage={1} range={1}>{mock}</Pagination>);
+        wrapper.setState({ lastPage: 3 });
+        expect(wrapper.state('currentPage')).toBe(1);
+        wrapper.find({name: 'lastPage'}).simulate('click', {currentTarget: { name: 'lastPage'}});
+        expect(wrapper.state('currentPage')).toBe(3);
+        wrapper.find({name: 'lastPage'}).simulate('click', {currentTarget: { name: 'lastPage'}});
+        expect(wrapper.state('currentPage')).toBe(3);       
+        wrapper.unmount();
+    });
+
+    test('Handleclick is fired on page number click', () => {
+        let wrapper = shallow(<Pagination  data={paginatedData} totalRecords={3}  recordsPerPage={1} range={1}>{mock}</Pagination>);
+        wrapper.setState({ lastPage: 3});
+        wrapper.instance().handleClick = jest.fn();
+        wrapper.instance().forceUpdate();
+        expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
+        wrapper.find({name: 'value1'}).simulate('click');
+        expect(wrapper.instance().handleClick).toHaveBeenCalled();
+        wrapper.find({name: 'value1'}).simulate('click');
+        expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(2);
+        wrapper.unmount();
+    });
 });
-
-
-test('Clicking Next Page Calls Handle Change', () => {
-    const spy = jest.fn();
-    let wrapper = shallow(<Pagination filteredData={taskList} totalRecords={taskList.length} recordsPerPage={3} />);
-    wrapper.instance().handleClick = spy;
-    wrapper.instance().forceUpdate();
-    expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
-    wrapper.find('#nextPage').simulate('click',{currentTarget: {
-        name: 'nextPage'
-      }});
-    expect(wrapper.instance().handleClick).toHaveBeenCalled();
-    expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(1);
-    wrapper.unmount();
-});
-
-test('Clicking Previous Page Calls Handle Change', () => {
-    const spy = jest.fn();
-    let wrapper = shallow(<Pagination filteredData={taskList} totalRecords={taskList.length} recordsPerPage={3} />);
-    wrapper.instance().handleClick = spy;
-    wrapper.instance().forceUpdate();
-    expect(wrapper.instance().handleClick).not.toHaveBeenCalled();
-    wrapper.find('#previousPage').simulate('click',{currentTarget: {
-        name: 'previousPage'
-      }});
-    expect(wrapper.instance().handleClick).toHaveBeenCalled();
-    expect(wrapper.instance().handleClick).toHaveBeenCalledTimes(1);
-    wrapper.unmount();
-});
-
-test('Clicking Next Goes To Next Page', () => {
-    let wrapper = shallow(<Pagination filteredData={taskList} totalRecords={taskList.length} recordsPerPage={3} />);
-    wrapper.instance().forceUpdate();
-    
-    wrapper.unmount();
-});
-
