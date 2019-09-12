@@ -13,10 +13,14 @@ The majority of the components are kept in the core module. Simply clone the rep
 ## Components
 
 #### Header
-Typical page heading component that has an associate icon if desired `props:- title :text, icon :object, style :object]`
+Typical page heading component that has an associate icon if desired 
+
+`[props:- title :text, icon :object, style :object]`
 
 #### Spinner
-Animated spinning circle, usually used to denote loading `[props:- style :object]`
+Animated spinning circle, usually used to denote loading 
+
+`[props:- style :object]`
 
 
 
