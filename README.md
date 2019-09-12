@@ -14,14 +14,17 @@ The majority of the components are kept in the core module. Simply clone the rep
 
 ##### Button
 Part of Core module
+
 `[props:- text :string (required), className :string, onClick :function, style :object, name :string]`
 
 #### Pagination
 Part of Pagination module
+
 `[props:- data :array (required), className :string, recordsPerPage :number (required), range :number, style :object, children :any (required)]`
 
 ##### Spinner
 Part of Core module
+
 `[props:- style :object, className :string]`
 
 
