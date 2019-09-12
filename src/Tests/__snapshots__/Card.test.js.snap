@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Component Behaves As Expected Card should render to DOM 1`] = `[Function]`;
+
+exports[`Card Component Behaves As Expected Card should render to DOM with CardTitle nested 1`] = `[Function]`;
+
+exports[`Card Component Behaves As Expected Card should render to DOM with full nesting 1`] = `[Function]`;
