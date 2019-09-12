@@ -17,6 +17,12 @@ Part of Core module
 
 `[props:- text :string (required), className :string, onClick :function, style :object, name :string]`
 
+#### Card, CardTitle, CardBody
+Part of Core module
+Card `[props:- className :string, style :object, children :any]`
+CardTitle `[props:- className :string, style :object, title :string]`
+CardBody `[props:- className :string, style :object, children :any]`
+
 #### Pagination
 Part of Pagination module
 
