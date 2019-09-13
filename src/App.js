@@ -10,7 +10,7 @@ function App() {
             <CardTitle title="My Card" className="text-center"/>
             <CardBody>
             <Form>
-                <TextInput labelText="My Text Input" labelStyle={{color: 'red'}} name="text-input" value="" placeholder="test" onChange={() => alert("Change")} className="form-control" />
+                <TextInput labelText="My Text Input" labelStyle={{color: 'red'}} name="text-input" value="" placeholder="test" onChange={() => alert("Change")} validationMessage="Error" className="form-control" />
             </Form>
                 <Button className="btn btn-primary mt-2" onClick={() => alert("example")} text='Test' />
             </CardBody>
