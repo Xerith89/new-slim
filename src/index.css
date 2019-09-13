@@ -12,27 +12,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.btn {
-  border-radius: 0 !important;
-}
-
-.nav-button {
-  background-image: none;
-}
-
-.example-enter {
-  height: 0px;
-}
-
-.example-enter.example-enter-active {
-  height: 100px;
-  -webkit-transition: height .3s ease;
-  transition: height .3s ease;
-}
-
-.example-leave.example-leave-active {
-  height: 0px;
-  -webkit-transition: height .3s ease;
-  transition: height .3s ease;
-}

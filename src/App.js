@@ -1,10 +1,13 @@
 import React from 'react';
-import {Spinner, Button, Card, CardTitle, CardBody} from './Components/Core'
+import {Spinner, Button, Card, CardTitle, CardBody, NavBar, NavLinks} from './Components/Core'
 import {Form, TextInput, EmailInput, NumberInput, PasswordInput, TextArea, Select, Radio, Checkbox} from './Components/Form'
 
 function App() {
     return ( 
     <div className = "App">
+        <NavBar className="navbar-dark bg-dark text-white" brand="Example">
+            <NavLinks navLinks={['Home','About']} />
+        </NavBar>
         <Spinner style={{color: 'red'}} />
         <Card style={{width: '60vw'}}className="mr-5 offset-sm-2">
             <CardTitle title="My Card" className="text-center"/>

@@ -42,6 +42,29 @@ export function CardBody(props) {
     )
 }
 
+export function NavBar(props) {
+    return (
+        <div>
+            <nav style={props.style} id={props.id} className={`navbar ${props.className}`}>
+                <h3>{props.brand}</h3>
+                   {props.children}
+            </nav>
+        </div>
+    )
+}
+
+export function NavLinks(props) {
+    return (
+        <ul className={`navbar-nav ${props.className}`}>
+            {props.navLinks && props.navLinks.map((link,i) => {
+                return (  <li key={i} className="nav-item">
+                 <a className="nav-link" href="/">{link}</a>   
+                </li>)
+            })}
+        </ul>
+    )
+}
+
 Button.propTypes = {
     style: PropTypes.object,
     display: PropTypes.any,
