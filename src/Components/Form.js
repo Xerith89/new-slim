@@ -16,7 +16,7 @@ export function TextInput(props) {
         <div>
             {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
             <input type='text' style={props.style} name={props.name} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} className={props.className}>{props.display}</input>
-            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
+            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationText}</span>
         </div>
     )
 }
@@ -26,7 +26,7 @@ export function EmailInput(props) {
         <div>
             {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
             <input type='email' style={props.style} name={props.name} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} className={props.className}>{props.display}</input>
-            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
+            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationText}</span>
         </div>
     )
 }
@@ -36,7 +36,7 @@ export function NumberInput(props) {
         <div>
             {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
             <input type='number' max={props.max} min={props.min} step={props.step} style={props.style} name={props.name} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} className={props.className}>{props.display}</input>
-            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
+            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationText}</span>
         </div>
     )
 }
@@ -46,7 +46,7 @@ export function PasswordInput(props) {
         <div>
             {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
             <input type='password' style={props.style} name={props.name} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} className={props.className}>{props.display}</input>
-            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
+            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationText}</span>
         </div>
     )
 }
@@ -56,7 +56,7 @@ export function TextArea(props) {
         <div>
             {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
             <textarea style={props.style} rows={props.rows} cols={props.cols} name={props.name} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} className={props.className}>{props.display}</textarea>
-            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
+            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationText}</span>
         </div>
     )
 }
@@ -70,7 +70,7 @@ export function Select(props) {
                 return(<option key={i}>{option}</option>)
             })}
             </select>
-            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
+            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationText}</span>
         </div>
     )
 }
@@ -80,7 +80,17 @@ export function Radio(props) {
         <div>
             {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
             <input type="radio" style={props.style} name={props.name} checked={props.checked} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} onClick={props.onClick} className={props.className}>{props.display}</input>
-            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
+            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationText}</span>
+        </div>
+    )
+}
+
+export function Checkbox(props) {
+    return (
+        <div>
+            {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
+            <input type="checkbox" style={props.style} name={props.name} checked={props.checked} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} onClick={props.onClick} className={props.className}>{props.display}</input>
+            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationText}</span>
         </div>
     )
 }
@@ -97,16 +107,16 @@ TextInput.propTypes = {
     labelStyle: PropTypes.object,
     name: PropTypes.string,
     value: PropTypes.string,
+    step: PropTypes.string,
     id: PropTypes.string,
     placeholder: PropTypes.string, 
     className: PropTypes.string,
     labelClassName: PropTypes.string,
     labelText: PropTypes.string,
-    children: PropTypes.any,
     onChange: PropTypes.func,
     validationStyle: PropTypes.object,
     validationClassName: PropTypes.string,
-    validationMessage: PropTypes.string
+    validationText: PropTypes.string
 }
 
 EmailInput.propTypes = {
@@ -119,7 +129,6 @@ EmailInput.propTypes = {
     className: PropTypes.string,
     labelClassName: PropTypes.string,
     labelText: PropTypes.string,
-    children: PropTypes.any,
     onChange: PropTypes.func,
     validationStyle: PropTypes.object,
     validationClassName: PropTypes.string,
@@ -138,7 +147,6 @@ NumberInput.propTypes = {
     className: PropTypes.string,
     labelClassName: PropTypes.string,
     labelText: PropTypes.string,
-    children: PropTypes.any,
     onChange: PropTypes.func,
     validationStyle: PropTypes.object,
     validationClassName: PropTypes.string,
@@ -155,7 +163,6 @@ PasswordInput.propTypes = {
     className: PropTypes.string,
     labelClassName: PropTypes.string,
     labelText: PropTypes.string,
-    children: PropTypes.any,
     onChange: PropTypes.func,
     validationStyle: PropTypes.object,
     validationClassName: PropTypes.string,
@@ -172,7 +179,6 @@ TextArea.propTypes = {
     className: PropTypes.string,
     labelClassName: PropTypes.string,
     labelText: PropTypes.string,
-    children: PropTypes.any,
     onChange: PropTypes.func,
     validationStyle: PropTypes.object,
     validationClassName: PropTypes.string,
@@ -191,7 +197,6 @@ Select.propTypes = {
     className: PropTypes.string,
     labelClassName: PropTypes.string,
     labelText: PropTypes.string,
-    children: PropTypes.any,
     onChange: PropTypes.func,
     validationStyle: PropTypes.object,
     validationClassName: PropTypes.string,
@@ -209,7 +214,24 @@ Radio.propTypes = {
     className: PropTypes.string,
     labelClassName: PropTypes.string,
     labelText: PropTypes.string,
-    children: PropTypes.any,
+    onChange: PropTypes.func,
+    onClick: PropTypes.func,
+    validationStyle: PropTypes.object,
+    validationClassName: PropTypes.string,
+    validationMessage: PropTypes.string,
+    checked: PropTypes.string
+}
+
+Checkbox.propTypes = {
+    style: PropTypes.object,
+    labelStyle: PropTypes.object,
+    name: PropTypes.string,
+    value: PropTypes.string,
+    id: PropTypes.string,
+    placeholder: PropTypes.string, 
+    className: PropTypes.string,
+    labelClassName: PropTypes.string,
+    labelText: PropTypes.string,
     onChange: PropTypes.func,
     onClick: PropTypes.func,
     validationStyle: PropTypes.object,

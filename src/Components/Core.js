@@ -13,7 +13,7 @@ export function Spinner(props) {
 export function Button(props) {
     return (
         <div>
-            <button type={props.type} className={props.className} name={props.name} onClick={props.onClick} style={props.style}>{props.text}</button>
+            <button type={props.type} className={props.className} name={props.name} onClick={props.onClick} style={props.style}>{props.display}</button>
         </div>
     )
 }
@@ -44,7 +44,7 @@ export function CardBody(props) {
 
 Button.propTypes = {
     style: PropTypes.object,
-    text: PropTypes.string.isRequired,
+    display: PropTypes.any,
     className: PropTypes.string,
     onClick: PropTypes.func,
     name: PropTypes.string,
