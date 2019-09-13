@@ -1,5 +1,6 @@
 import React from 'react';
-import {Spinner, Button, Card, CardTitle, CardBody, NavBar, NavLinks} from './Components/Core'
+import {Button, Card, CardTitle, CardBody, NavBar, NavLinks} from './Components/Core'
+import {Spinner, Badge} from './Components/Utility'
 import {Form, TextInput, EmailInput, NumberInput, PasswordInput, TextArea, Select, Radio, Checkbox} from './Components/Form'
 
 function App() {
@@ -10,7 +11,9 @@ function App() {
         </NavBar>
         <Spinner style={{color: 'red'}} />
         <Card style={{width: '60vw'}}className="mr-5 offset-sm-2">
-            <CardTitle title="My Card" className="text-center"/>
+            <CardTitle title="My Card" className="text-center">
+                <Badge className="badge-dark" display="2"/>
+            </CardTitle>
             <CardBody>
             <Form onSubmit={(event) => {
                 event.preventDefault();
@@ -28,7 +31,9 @@ function App() {
                 <Checkbox labelText="My Checkbox" className="form-check" />
                 <Button type="submit" className="btn btn-primary mt-2" display='Submit' />
             </Form>
-            <Button className="btn btn-primary mt-2" onClick={() => console.log("example")} display='Test' />
+            <Button className="btn btn-primary mt-2" onClick={() => console.log("example")} display='Test' >
+                <Badge className="badge-danger ml-1" display="2"/>
+            </Button>
             </CardBody>
         </Card>
         

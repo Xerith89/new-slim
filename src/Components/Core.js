@@ -1,19 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export function Spinner(props) {
-    return (
-        <div className="d-flex justify-content-center m-5" data-testid='spinner'>
-            <div style={props.style} className="spinner-border" role="status">
-            </div>
-      </div>
-    )
-}
-
 export function Button(props) {
     return (
         <div>
-            <button type={props.type} className={props.className} name={props.name} onClick={props.onClick} style={props.style}>{props.display}</button>
+            <button type={props.type} className={props.className} name={props.name} onClick={props.onClick} style={props.style}>{props.display}{props.children}</button>
         </div>
     )
 }
@@ -30,7 +21,7 @@ export function Card(props) {
 
 export function CardTitle(props) {
     return (
-        <h2 style={props.style} className={`card-header `+props.className}>{props.title}</h2>
+        <h2 style={props.style} className={`card-header `+props.className}>{props.title} {props.children}</h2>
     )
 }
 
@@ -71,7 +62,8 @@ Button.propTypes = {
     className: PropTypes.string,
     onClick: PropTypes.func,
     name: PropTypes.string,
-    type: PropTypes.string
+    type: PropTypes.string,
+    children: PropTypes.any,
 }
 
 Card.propTypes = {
@@ -82,6 +74,7 @@ Card.propTypes = {
 
 CardTitle.propTypes = {
     title: PropTypes.string,
+    children: PropTypes.any,
     className: PropTypes.string,
     style: PropTypes.object,
 }
@@ -93,9 +86,6 @@ CardBody.propTypes = {
 }
 
 
-Spinner.propTypes = {
-    style: PropTypes.object,
-    className: PropTypes.string
-}
+
 
 
