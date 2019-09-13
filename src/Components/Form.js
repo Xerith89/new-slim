@@ -1,11 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-/* TODO - 
-select, radio button, checkbox to start off with
-Submit will fall under button component
-*/
-
 export function Form(props) {
     return (
         <div>
@@ -80,6 +75,16 @@ export function Select(props) {
     )
 }
 
+export function Radio(props) {
+    return (
+        <div>
+            {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
+            <input type="radio" style={props.style} name={props.name} checked={props.checked} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} onClick={props.onClick} className={props.className}>{props.display}</input>
+            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
+        </div>
+    )
+}
+
 
 Form.propTypes = {
     children: PropTypes.any,
@@ -97,7 +102,6 @@ TextInput.propTypes = {
     className: PropTypes.string,
     labelClassName: PropTypes.string,
     labelText: PropTypes.string,
-    onSubmit: PropTypes.func,
     children: PropTypes.any,
     onChange: PropTypes.func,
     validationStyle: PropTypes.object,
@@ -115,7 +119,6 @@ EmailInput.propTypes = {
     className: PropTypes.string,
     labelClassName: PropTypes.string,
     labelText: PropTypes.string,
-    onSubmit: PropTypes.func,
     children: PropTypes.any,
     onChange: PropTypes.func,
     validationStyle: PropTypes.object,
@@ -135,7 +138,6 @@ NumberInput.propTypes = {
     className: PropTypes.string,
     labelClassName: PropTypes.string,
     labelText: PropTypes.string,
-    onSubmit: PropTypes.func,
     children: PropTypes.any,
     onChange: PropTypes.func,
     validationStyle: PropTypes.object,
@@ -153,7 +155,6 @@ PasswordInput.propTypes = {
     className: PropTypes.string,
     labelClassName: PropTypes.string,
     labelText: PropTypes.string,
-    onSubmit: PropTypes.func,
     children: PropTypes.any,
     onChange: PropTypes.func,
     validationStyle: PropTypes.object,
@@ -171,7 +172,6 @@ TextArea.propTypes = {
     className: PropTypes.string,
     labelClassName: PropTypes.string,
     labelText: PropTypes.string,
-    onSubmit: PropTypes.func,
     children: PropTypes.any,
     onChange: PropTypes.func,
     validationStyle: PropTypes.object,
@@ -179,4 +179,41 @@ TextArea.propTypes = {
     validationMessage: PropTypes.string,
     rows: PropTypes.string,
     cols: PropTypes.string
+}
+
+Select.propTypes = {
+    style: PropTypes.object,
+    labelStyle: PropTypes.object,
+    name: PropTypes.string,
+    value: PropTypes.string,
+    id: PropTypes.string,
+    placeholder: PropTypes.string, 
+    className: PropTypes.string,
+    labelClassName: PropTypes.string,
+    labelText: PropTypes.string,
+    children: PropTypes.any,
+    onChange: PropTypes.func,
+    validationStyle: PropTypes.object,
+    validationClassName: PropTypes.string,
+    validationMessage: PropTypes.string,
+    options: PropTypes.array
+}
+
+Radio.propTypes = {
+    style: PropTypes.object,
+    labelStyle: PropTypes.object,
+    name: PropTypes.string,
+    value: PropTypes.string,
+    id: PropTypes.string,
+    placeholder: PropTypes.string, 
+    className: PropTypes.string,
+    labelClassName: PropTypes.string,
+    labelText: PropTypes.string,
+    children: PropTypes.any,
+    onChange: PropTypes.func,
+    onClick: PropTypes.func,
+    validationStyle: PropTypes.object,
+    validationClassName: PropTypes.string,
+    validationMessage: PropTypes.string,
+    checked: PropTypes.string
 }
