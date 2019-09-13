@@ -1,6 +1,6 @@
 import React from 'react';
 import {Spinner, Button, Card, CardTitle, CardBody} from './Components/Core'
-import {Form, TextInput, EmailInput, NumberInput} from './Components/Form'
+import {Form, TextInput, EmailInput, NumberInput, PasswordInput} from './Components/Form'
 
 function App() {
     return ( 
@@ -18,6 +18,9 @@ function App() {
                 </div>
                 <div>
                     <NumberInput labelText="My Number Input" min="2" max="6" step="2" className="form-control"/>
+                </div>
+                <div>
+                   <PasswordInput labelText="My Password Input" className="form-control"/>
                 </div>
             </Form>
                 <Button className="btn btn-primary mt-2" onClick={() => alert("example")} text='Test' />

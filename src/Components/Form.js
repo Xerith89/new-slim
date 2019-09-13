@@ -41,6 +41,16 @@ export function NumberInput(props) {
     )
 }
 
+export function PasswordInput(props) {
+    return (
+        <React.Fragment>
+            {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
+            <input type='password' style={props.style} name={props.name} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} className={props.className}>{props.display}</input>
+            <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
+        </React.Fragment>
+    )
+}
+
 
 Form.propTypes = {
     children: PropTypes.any,
@@ -91,6 +101,24 @@ NumberInput.propTypes = {
     value: PropTypes.string,
     max: PropTypes.number,
     min: PropTypes.number,
+    id: PropTypes.string,
+    placeholder: PropTypes.string, 
+    className: PropTypes.string,
+    labelClassName: PropTypes.string,
+    labelText: PropTypes.string,
+    onSubmit: PropTypes.func,
+    children: PropTypes.any,
+    onChange: PropTypes.func,
+    validationStyle: PropTypes.object,
+    validationClassName: PropTypes.string,
+    validationMessage: PropTypes.string
+}
+
+PasswordInput.propTypes = {
+    style: PropTypes.object,
+    labelStyle: PropTypes.object,
+    name: PropTypes.string,
+    value: PropTypes.string,
     id: PropTypes.string,
     placeholder: PropTypes.string, 
     className: PropTypes.string,
