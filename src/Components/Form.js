@@ -18,57 +18,57 @@ export function Form(props) {
 
 export function TextInput(props) {
     return (
-        <React.Fragment>
+        <div>
             {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
             <input type='text' style={props.style} name={props.name} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} className={props.className}>{props.display}</input>
             <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
-        </React.Fragment>
+        </div>
     )
 }
 
 export function EmailInput(props) {
     return (
-        <React.Fragment>
+        <div>
             {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
             <input type='email' style={props.style} name={props.name} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} className={props.className}>{props.display}</input>
             <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
-        </React.Fragment>
+        </div>
     )
 }
 
 export function NumberInput(props) {
     return (
-        <React.Fragment>
+        <div>
             {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
             <input type='number' max={props.max} min={props.min} step={props.step} style={props.style} name={props.name} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} className={props.className}>{props.display}</input>
             <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
-        </React.Fragment>
+        </div>
     )
 }
 
 export function PasswordInput(props) {
     return (
-        <React.Fragment>
+        <div>
             {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
             <input type='password' style={props.style} name={props.name} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} className={props.className}>{props.display}</input>
             <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
-        </React.Fragment>
+        </div>
     )
 }
 
 export function TextArea(props) {
     return (
-        <React.Fragment>
+        <div>
             {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
             <textarea style={props.style} rows={props.rows} cols={props.cols} name={props.name} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} className={props.className}>{props.display}</textarea>
             <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
-        </React.Fragment>
+        </div>
     )
 }
 
 export function Select(props) {
     return (
-        <React.Fragment>
+        <div>
             {props.labelText ? <label style={props.labelStyle} className={props.labelClassName}>{props.labelText}</label> : null}
             <select style={props.style} rows={props.rows} value={props.value} id={props.id} onChange={props.onChange} className={props.className}>{props.display}
             {props.options && props.options.map((option, i) => {
@@ -76,7 +76,7 @@ export function Select(props) {
             })}
             </select>
             <span style={props.validationStyle} className={`text-danger ${props.validationClassName}`}>{props.validationMessage}</span>
-        </React.Fragment>
+        </div>
     )
 }
 
