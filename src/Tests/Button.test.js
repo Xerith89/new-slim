@@ -8,7 +8,7 @@ configure({adapter: new Adapter()});
 describe('Button Component Behaves As Expected', () => {
 
     test('Button component renders to the DOM with correct text', () => {
-        let wrapper = shallow(<Button text="MyButton"/>);
+        let wrapper = shallow(<Button><h1>My Button</h1></Button>);
         expect(wrapper.html()).toMatchSnapshot();
     });
 
