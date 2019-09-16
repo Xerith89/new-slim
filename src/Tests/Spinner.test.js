@@ -1,4 +1,4 @@
-import {Spinner} from '../Components/Core'
+import {Spinner} from '../Components/Utility'
 import React from 'react'
 import {shallow, configure,} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
