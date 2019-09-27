@@ -3,6 +3,7 @@ import {Button, Card, CardTitle, CardBody, NavBar, NavLinks} from './Components/
 import {Spinner, Badge} from './Components/Utility'
 import {Form, TextInput, EmailInput, NumberInput, PasswordInput, TextArea, Select, Radio, Checkbox} from './Components/Form'
 import {Alert, AlertHeading, Paragraph, HorizontalLine} from './Components/Styling'
+import Modal from './Components/Modal';
 
 function App() {
     return ( 
@@ -13,7 +14,7 @@ function App() {
         <Spinner className="m-5" style={{color: 'red'}} />
         <Card style={{width: '60vw'}}className=" mx-auto mb-4">
             <CardTitle title="My Card" className="text-center">
-                <Badge className="badge-dark" display="2"/>
+                <Badge className="badge-dark badge-pill" display="Pill Badge"/>
             </CardTitle>
             <CardBody>
                 <Alert className="alert-success">
@@ -22,6 +23,7 @@ function App() {
                     <HorizontalLine />
                     <Paragraph text="Have another paragraph" />
                 </Alert>
+                <Modal />
                 <Form onSubmit={(event) => {
                     event.preventDefault();
                     console.log("submitted form");
