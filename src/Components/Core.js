@@ -46,9 +46,9 @@ export function NavBar(props) {
 
 export function NavLinks(props) {
     return (
-        <ul className={`navbar-nav ${props.className}`}>
+        <ul className={`navbar-nav list-group-horizontal-sm ${props.className}`}>
             {props.navLinks && props.navLinks.map((link,i) => {
-                return (  <li key={i} className="nav-item">
+                return (  <li key={i} className="nav-item mr-2">
                  <a className="nav-link" href="/">{link}</a>   
                 </li>)
             })}
